@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Link } from '@/models/Link'
+import type Link from '@/models/link'
 
 defineProps({
   title: String,

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import linkSection from '@/components/linkSection.vue'
-import type { Link } from '@/models/Link'
+import type Link from '@/models/link'
 
-const links: Link[] = [
+// fix any :^) with section type
+const links: any[] = [
   {
     title: 'chill',
     color: '#8E7AB5',
