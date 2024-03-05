@@ -1,4 +1,4 @@
 # TODO
 
 - responsive
-- add searchbars
+- add searchbars // besides link ? instead of ? click ? 
