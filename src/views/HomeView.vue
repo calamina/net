@@ -24,19 +24,26 @@ const list = ref<LinkList[]>(links)
 
 <style scoped>
 main {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding: 1rem;
 }
 .links {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-content: center;
   gap: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>

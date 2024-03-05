@@ -36,7 +36,6 @@ defineProps({
   margin-top: 2.5rem;
   padding: 1rem;
   position: relative;
-  width: fit-content;
 
   &__title {
     position: absolute;
