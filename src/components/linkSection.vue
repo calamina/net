@@ -20,7 +20,8 @@ defineProps({
         v-for="(link, index) in links" 
         :key="index" 
         :href="link.url" 
-        class="link-section__item">
+        class="link-section__item"
+        target="_blank">
         {{ link.name }}
       </a>
     </nav>
@@ -32,8 +33,15 @@ defineProps({
   display: flex;
   flex-direction: column;
   border: 1px solid v-bind(color);
+  margin-top: 2.5rem;
+  padding: 1rem;
+  position: relative;
+  width: fit-content;
 
   &__title {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     align-items: center;
     font-size: 1rem;
@@ -56,17 +64,15 @@ defineProps({
     flex-flow: column;
     height: 100%;
     width: 100%;
-    align-items: center;
     justify-content: center;
-    gap: 1.25rem;
+    gap: .5rem;
   }
-
+  
   &__item {
-    width: 50%;
+    width: 10rem;
     color: white;
     text-decoration: none;
     transition: color 0.3s;
-    border-bottom: 1px solid v-bind(color);
     padding: 0.25rem 0;
     color: v-bind(color);
     transition: padding-left 0.2s;
@@ -75,6 +81,7 @@ defineProps({
       padding-left: 0.5rem;
       background-color: v-bind(color);
       color: #242424;
+      font-style: oblique;
     }
   }
 }

@@ -1,60 +1,16 @@
 <script setup lang="ts">
 import linkSection from '@/components/linkSection.vue'
-import type Link from '@/models/link'
+import type LinkList from '@/models/linklist'
+import links from '@/data/links.json'
+import { ref } from 'vue'
 
-// fix any :^) with section type
-const links: any[] = [
-  {
-    title: 'chill',
-    color: '#8E7AB5',
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c.83.642 2.077 1.017 3.5 1c1.423.017 2.67-.358 3.5-1c.83-.642 2.077-1.017 3.5-1c1.423-.017 2.67.358 3.5 1"></path><path d="M8 3a2.4 2.4 0 0 0-1 2a2.4 2.4 0 0 0 1 2"></path><path d="M12 3a2.4 2.4 0 0 0-1 2a2.4 2.4 0 0 0 1 2"></path><path d="M3 10h14v5a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6v-5z"></path><path d="M16.746 16.726a3 3 0 1 0 .252-5.555"></path></g></svg>',
-    links: [
-      { name: 'youtube', url: 'https://vuejs.org' },
-      { name: '4chan', url: 'https://pinia.esm.dev' },
-      { name: '???', url: 'https://pinia.esm.dev' },
-      { name: '???', url: 'https://pinia.esm.dev' },
-    ]
-  },
-  {
-    title: 'admin',
-    color: '#B784B7',
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"></ellipse><path d="M4 6v6a8 3 0 0 0 16 0V6"></path><path d="M4 12v6a8 3 0 0 0 16 0v-6"></path></g></svg>',
-    links: [
-      { name: 'gmail', url: 'https://vuejs.org' },
-      { name: '???', url: 'https://???.esm.dev' },
-      { name: '???', url: 'https://???.esm.dev' },
-      { name: '???', url: 'https://???.esm.dev' },
-    ]
-  },
-  {
-    title: 'dev',
-    color: '#E493B3',
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path d="M14 4l-4 16"></path></g></svg>',
-    links: [
-      { name: 'codrops', url: 'https://vuejs.org' },
-      { name: 'dev.to', url: 'https://pinia.esm.dev' },
-      { name: '???', url: 'https://pinia.esm.dev' },
-      { name: '???', url: 'https://pinia.esm.dev' },
-    ]
-  },
-  {
-    title: 'media',
-    color: '#EEA5A6',
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8h.01"></path><rect x="4" y="4" width="16" height="16" rx="3"></rect><path d="M4 15l4-4a3 5 0 0 1 3 0l5 5"></path><path d="M14 14l1-1a3 5 0 0 1 3 0l2 2"></path></g></svg>',
-    links: [
-      { name: 'yts', url: 'https://vuejs.org' },
-      { name: 'discogs', url: 'https://pinia.esm.dev' },
-      { name: '1337x', url: 'https://pinia.esm.dev' },
-      { name: 'scq', url: 'https://pinia.esm.dev' },
-    ]
-  }
-]
-
+const list = ref<LinkList[]>(links)
 </script>
 
 <template>
   <main>
-    <linkSection 
+    <div class="links">
+      <linkSection 
       v-for="(section, index) in links" 
       :key="index" 
       :title="section.title" 
@@ -62,6 +18,7 @@ const links: any[] = [
       :links="section.links" 
       :icon="section.icon" 
     />
+    </div>
   </main>
 </template>
 
@@ -69,10 +26,17 @@ const links: any[] = [
 main {
   height: 100vh;
   width: 100vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 5rem 2rem;
-  padding: 4rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 </style>
