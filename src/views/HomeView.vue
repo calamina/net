@@ -35,12 +35,12 @@ main {
 .links {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  align-items: center;
+  align-items: start;
   justify-content: center;
   gap: 2rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

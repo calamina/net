@@ -18,6 +18,7 @@
       { "name": "gmail", "url": "https://vuejs.org" },
       { "name": "???", "url": "https://???.esm.dev" },
       { "name": "???", "url": "https://???.esm.dev" },
+      { "name": "???", "url": "https://???.esm.dev" },
       { "name": "???", "url": "https://???.esm.dev" }
     ]
   },
@@ -40,6 +41,7 @@
       { "name": "yts", "url": "https://vuejs.org", "search": "ytsearch" },
       { "name": "discogs", "url": "https://pinia.esm.dev", "search": "ytsearch" },
       { "name": "1337x", "url": "https://pinia.esm.dev", "search": "ytsearch" },
+      { "name": "scq", "url": "https://pinia.esm.dev", "search": "ytsearch" },
       { "name": "scq", "url": "https://pinia.esm.dev", "search": "ytsearch" }
     ]
   }
