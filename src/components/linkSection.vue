@@ -37,8 +37,15 @@ const switchSearch = (index: number) => {
           target="_blank">
           {{ link.name }}
         </a>
-        <form class="link-section__form" v-if="activeSearch === index" :action="'https://www.senscritique.com/search?'">
-          <input @blur="switchSearch(index)" :id="'search' + index" class="link-section__search" type="text" name="query" autocomplete="off" />
+        <a 
+          v-for="(alt, index) in link.alt" :key="index"
+          :href="alt.url" 
+          class="link-section__item link-section__item--alt"
+          target="_blank">
+          {{ alt.name }}
+        </a>
+        <form target="_blank" class="link-section__form" v-if="link.search && activeSearch === index" :action="link.search.url">
+          <input @blur="switchSearch(index)" :id="'search' + index" class="link-section__search" type="text" :name="link.search.query" autocomplete="off" />
         </form>
         <button v-if="link.search && activeSearch !== index" class="link-section__switch" @click="switchSearch(index)">•</button>
         <button v-if="link.search && activeSearch === index" class="link-section__switch" @click="switchSearch(index)">•</button>
@@ -75,7 +82,7 @@ const switchSearch = (index: number) => {
     display: flex;
     flex-flow: column;
     height: 100%;
-    width: 100%;
+    width: 12rem;
     gap: 0.25rem;
     justify-content: center;
     border: 1px solid #242424;
@@ -91,13 +98,14 @@ const switchSearch = (index: number) => {
     align-items: center;
     height: 2rem;
     gap: 0.5rem;
+    width: 100%;
   }
   
   &__item {
     font-size: 1rem;
     display: flex;
     align-items: center;
-    width: 10rem;
+    width: 100%;
     height: 2rem;
     color: white;
     text-decoration: none;
@@ -107,15 +115,24 @@ const switchSearch = (index: number) => {
 
     &:hover {
       background-color: v-bind(color);
-      padding-left: 0.5rem;
+      padding: 0 0.5rem;
       color: #242424;
-      font-style: oblique;
+      // font-style: oblique;
+    }
+
+    &--alt {
+      opacity: 0.6;
+      width: fit-content;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 
   &__search {
     font-size: 1rem;
-    width: 10rem;
+    width: 100%;
     height: 2rem;
     border: none;
     color: v-bind(color);

@@ -46,4 +46,11 @@ main {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media screen and (max-width: 700px) {
+  .links {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
 </style>
