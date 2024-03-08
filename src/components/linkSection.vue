@@ -51,13 +51,14 @@ const switchSearch = (index: number) => {
         <form target="_blank" class="link-section__form" v-if="link.search && activeSearch === index" :action="link.search.url">
           <input @blur="switchSearch(index)" :id="'search' + index" class="link-section__search" type="text" :name="link.search.query" autocomplete="off" />
         </form>
-        <button v-if="link.search && activeSearch !== index" class="link-section__switch" @click="switchSearch(index)">•</button>
+        <button v-if="link.search && activeSearch !== index" class="link-section__switch" @click="switchSearch(index)">◈</button>
       </div>
     </nav>
   </div>
 </template>
 
 <style scoped lang="scss">
+
 .link-section {
   display: flex;
   flex-direction: column;
@@ -84,15 +85,12 @@ const switchSearch = (index: number) => {
     padding: .5rem;
     display: flex;
     flex-flow: column;
+    width: 15rem;
     height: 100%;
     gap: 0.25rem;
     justify-content: center;
-    border: 1px solid #242424;
-    border: 1px solid v-bind(color);
-    
-    &:hover {
-      border: 1px solid v-bind(color);
-    }
+    border: 4px solid v-bind(color);
+    background-color: v-bind(color);
   }
 
   &__link {
@@ -113,10 +111,16 @@ const switchSearch = (index: number) => {
     color: white;
     text-decoration: none;
     color: v-bind(color);
+    color: #242424;
 
     &:hover {
       background-color: v-bind(color);
       color: #242424;
+
+      &::before {
+        content: '●';
+        padding-right: 0.25rem;
+      }
     }
 
     &--alt {
@@ -147,6 +151,7 @@ const switchSearch = (index: number) => {
     border-radius: 100%;
     background-color: transparent;
     color: v-bind(color);
+    color: #242424;
     border: none;
     outline: none;
     cursor: pointer;

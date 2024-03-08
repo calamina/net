@@ -17,16 +17,18 @@ function toggleWork() {
   <main>
     <div class="links">
       <linkSection 
-      v-for="(section, index) in links"
-      :work="toggleWork" 
-      :key="index" 
-      :title="section.title" 
-      :color="section.color"
-      :links="section.links" 
-      :icon="section.icon" 
-    />
+      v-for="(section, index) in links" 
+        :work="toggleWork" 
+        :key="index" 
+        :title="section.title"
+        :color="section.color" 
+        :links="section.links" 
+        :icon="section.icon" />
     </div>
-    <button class="toggleWork" @click="toggleWork()">workon</button>
+    <div class="toggleWork" :class="{activeWork: flag}" @click="toggleWork()">
+      <svg  xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 24 24'><g fill='none' stroke='currentColor' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='7' width='18' height='13' rx='2'></rect><path d='M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path><path d='M12 12v.01'></path><path d='M3 13a20 20 0 0 0 18 0'></path></g></svg>
+      work
+    </div>
   </main>
 </template>
 
@@ -41,6 +43,7 @@ main {
   justify-content: center;
   gap: 2rem;
 }
+
 .links {
   display: grid;
   grid-template-columns: repeat(v-bind(workOn), 1fr);
@@ -51,16 +54,27 @@ main {
 
 .toggleWork {
   position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   bottom: 1rem;
   right: 1rem;
-  z-index: 100;
-  padding: .25rem;
-  font-size: 1rem;
   background-color: transparent;
-  border: 1px solid #ccc;
-  color: #ccc;
+  border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  height: 2rem;
+  padding: 0.5rem;
+  color: #ccc;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.activeWork {
+  color: #242424;
+  background-color: #ccc;
 }
 
 @media screen and (max-width: 1024px) {
