@@ -59,8 +59,8 @@
         "name": "chan",
         "url": "https://4chan.org",
         "alt": [
-          { "name": "g", "url": "https://4chan.org/g" },
-          { "name": "wp", "url": "https://4chan.org/wg" }
+          { "name": "tech", "url": "https://4chan.org/g" },
+          { "name": "wall", "url": "https://4chan.org/wg" }
         ]
       },
       {

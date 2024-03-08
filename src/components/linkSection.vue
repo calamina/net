@@ -133,15 +133,12 @@ const switchSearch = (index: number) => {
     font-size: 1rem;
     height: 2rem;
     border: none;
-    color: v-bind(color);
     color: #242424;
     padding: 0 0.5rem;
     font-style: oblique;
-    background-color: transparent;
     background-color: v-bind(color);
     outline: none;
-    border-bottom: 1px solid v-bind(color);
-    transition: padding-left 0.2s;
+    width: 11.5rem;
   } 
 
   &__switch {

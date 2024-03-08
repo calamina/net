@@ -56,7 +56,7 @@ main {
   z-index: 100;
   padding: .25rem;
   font-size: 1rem;
-  background-color: #242424;
+  background-color: transparent;
   border: 1px solid #ccc;
   color: #ccc;
   cursor: pointer;
