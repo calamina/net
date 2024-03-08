@@ -48,7 +48,6 @@ const switchSearch = (index: number) => {
           <input @blur="switchSearch(index)" :id="'search' + index" class="link-section__search" type="text" :name="link.search.query" autocomplete="off" />
         </form>
         <button v-if="link.search && activeSearch !== index" class="link-section__switch" @click="switchSearch(index)">•</button>
-        <button v-if="link.search && activeSearch === index" class="link-section__switch" @click="switchSearch(index)">•</button>
       </div>
     </nav>
   </div>
@@ -78,11 +77,10 @@ const switchSearch = (index: number) => {
   }
 
   &__list {
-    padding: 1rem;
+    padding: .5rem;
     display: flex;
     flex-flow: column;
     height: 100%;
-    width: 12rem;
     gap: 0.25rem;
     justify-content: center;
     border: 1px solid #242424;
@@ -97,11 +95,12 @@ const switchSearch = (index: number) => {
     display: flex;
     align-items: center;
     height: 2rem;
-    gap: 0.5rem;
+    gap: 1rem;
     width: 100%;
   }
   
   &__item {
+    padding: 0 .5rem;
     font-size: 1rem;
     display: flex;
     align-items: center;
@@ -109,15 +108,11 @@ const switchSearch = (index: number) => {
     height: 2rem;
     color: white;
     text-decoration: none;
-    transition: color 0.3s;
     color: v-bind(color);
-    transition: padding-left 0.2s;
 
     &:hover {
       background-color: v-bind(color);
-      padding: 0 0.5rem;
       color: #242424;
-      // font-style: oblique;
     }
 
     &--alt {
@@ -132,7 +127,6 @@ const switchSearch = (index: number) => {
 
   &__search {
     font-size: 1rem;
-    width: 100%;
     height: 2rem;
     border: none;
     color: v-bind(color);
