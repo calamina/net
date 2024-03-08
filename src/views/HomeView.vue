@@ -34,6 +34,7 @@ function toggleWork() {
 main {
   min-height: 100vh;
   width: 100vw;
+  padding: 2rem 0;
   display: flex;
   flex-flow: column;
   align-items: center;
