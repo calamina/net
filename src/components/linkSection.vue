@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import type Link from '@/models/link'
 import { ref, type Ref } from 'vue'
+import { useStorage } from '@vueuse/core'
 
-const props = defineProps({
+defineProps({
   title: String,
   color: String,
   icon: String,
-  links: Array<Link>
+  links: Array<Link>,
 })
+
+const flag = useStorage('work-active', false) // returns Ref<boolean>
+
 
 const activeSearch: Ref<number | null> = ref(null)
 
@@ -23,7 +27,7 @@ const switchSearch = (index: number) => {
 </script>
 
 <template>
-  <div class="link-section">
+  <div class="link-section" v-if="title === 'work' ? flag : true">
     <h2 class="link-section__title">
       <svg class="link-section__title__icon" v-html="icon" alt="icon"></svg>
       {{ title }}

@@ -1,17 +1,24 @@
 <script setup lang="ts">
 import linkSection from '@/components/linkSection.vue'
-import type LinkList from '@/models/linklist'
 import links from '@/data/links.json'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useStorage } from '@vueuse/core'
 
-const list = ref<LinkList[]>(links)
+const flag = useStorage('work-active', false) // returns Ref<boolean>
+const workOn = computed(() => flag.value ? '5' : '4')
+
+function toggleWork() {
+  flag.value = !flag.value
+}
+
 </script>
 
 <template>
   <main>
     <div class="links">
       <linkSection 
-      v-for="(section, index) in links" 
+      v-for="(section, index) in links"
+      :work="toggleWork" 
       :key="index" 
       :title="section.title" 
       :color="section.color"
@@ -19,6 +26,7 @@ const list = ref<LinkList[]>(links)
       :icon="section.icon" 
     />
     </div>
+    <button class="toggleWork" @click="toggleWork()">workon</button>
   </main>
 </template>
 
@@ -34,10 +42,24 @@ main {
 }
 .links {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(v-bind(workOn), 1fr);
   align-items: start;
   justify-content: center;
   gap: 2rem;
+}
+
+.toggleWork {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 100;
+  padding: .25rem;
+  font-size: 1rem;
+  background-color: #242424;
+  border: 1px solid #ccc;
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 @media screen and (max-width: 1024px) {

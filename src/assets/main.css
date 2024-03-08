@@ -5,6 +5,11 @@
   font-size: 1rem;
 }
 
-#app {
+html {
   background-color: #242424;
+}
+
+#app {
+  padding: 2rem 0;
+  overflow-x: hidden;
 }

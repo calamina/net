@@ -1,5 +1,40 @@
 [
   {
+    "title": "work",
+    "color": "#ccc",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 24 24'><g fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='7' width='18' height='13' rx='2'></rect><path d='M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path><path d='M12 12v.01'></path><path d='M3 13a20 20 0 0 0 18 0'></path></g></svg>",
+    "links": [
+      {
+        "name": "stash",
+        "url": "https://stash.akuiteo.fr/projects/AK/repos/akuiteo/pull-requests"
+      },
+      {
+        "name": "confluence",
+        "url": "https://akuiteo.atlassian.net/wiki/home"
+      },
+      {
+        "name": "instances",
+        "url": "https://intra.akuiteo.fr/instance"
+      },
+      {
+        "name": "absences",
+        "url": "https://intra.akuiteo.fr/absencecontroller/index"
+      },
+      {
+        "name": "support",
+        "url": "https://akuiteo.myakuiteo.com/akuiteo/apps/support/#/issues"
+      },
+      {
+        "name": "employee",
+        "url": "https://akuiteo.myakuiteo.com/akuiteo/apps/employee/#/agenda"
+      },
+      {
+        "name": "intra-ng",
+        "url": "https://intra-ng.akuiteo.fr/"
+      }
+    ]
+  },
+  {
     "title": "chill",
     "color": "#8E7AB5",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 24 24'><g fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 14c.83.642 2.077 1.017 3.5 1c1.423.017 2.67-.358 3.5-1c.83-.642 2.077-1.017 3.5-1c1.423-.017 2.67.358 3.5 1'></path><path d='M8 3a2.4 2.4 0 0 0-1 2a2.4 2.4 0 0 0 1 2'></path><path d='M12 3a2.4 2.4 0 0 0-1 2a2.4 2.4 0 0 0 1 2'></path><path d='M3 10h14v5a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6v-5z'></path><path d='M16.746 16.726a3 3 0 1 0 .252-5.555'></path></g></svg>",
@@ -41,7 +76,8 @@
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 24 24'><g fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><ellipse cx='12' cy='6' rx='8' ry='3'></ellipse><path d='M4 6v6a8 3 0 0 0 16 0V6'></path><path d='M4 12v6a8 3 0 0 0 16 0v-6'></path></g></svg>",
     "links": [
       { "name": "gmail", "url": "https://gmail.com" },
-      { "name": "generation", "url": "https://www.generation.fr" }
+      { "name": "generation", "url": "https://www.generation.fr" },
+      { "name": "benebono", "url": "https://account.benebono.fr" }
     ]
   },
   {
