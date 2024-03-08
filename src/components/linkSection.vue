@@ -44,11 +44,10 @@ const switchSearch = (index: number) => {
         <a 
           v-for="(alt, index) in link.alt" :key="index"
           :href="alt.url" 
-          class="link-section__item link-section__item--alt"
-          target="_blank">
+          class="link-section__item link-section__item--alt">
           {{ alt.name }}
         </a>
-        <form target="_blank" class="link-section__form" v-if="link.search && activeSearch === index" :action="link.search.url">
+        <form class="link-section__form" v-if="link.search && activeSearch === index" :action="link.search.url">
           <input @blur="switchSearch(index)" :id="'search' + index" class="link-section__search" type="text" :name="link.search.query" autocomplete="off" />
         </form>
         <button v-if="link.search && activeSearch !== index" class="link-section__switch" @click="switchSearch(index)">◈</button>
@@ -74,10 +73,32 @@ const switchSearch = (index: number) => {
     padding: 0.5rem 1rem;
     width: fit-content;
     gap: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    position: relative;
 
     &__icon {
       width: 1rem;
       height: 1rem;
+    }
+
+    &::before, &::after {
+      position: absolute;
+      right: -0.5rem;
+      bottom: 0;
+      content: '';
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+
+    &::before {
+      z-index: 50;
+      background-color: v-bind(color);
+    }
+    &::after {
+      z-index: 100;
+      border-bottom-left-radius: 0.5rem;
+      background-color: #242424;
     }
   }
 
@@ -91,6 +112,9 @@ const switchSearch = (index: number) => {
     justify-content: center;
     border: 4px solid v-bind(color);
     background-color: v-bind(color);
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
   }
 
   &__link {
@@ -110,16 +134,26 @@ const switchSearch = (index: number) => {
     height: 2rem;
     color: white;
     text-decoration: none;
-    color: v-bind(color);
     color: #242424;
-
+    transition: padding-left 0.2s;
+    position: relative;
+    
     &:hover {
       background-color: v-bind(color);
       color: #242424;
-
+      padding-left: 0.75rem;
+      
       &::before {
-        content: '●';
-        padding-right: 0.25rem;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        padding-right: 0.5rem;
+        background-color: #242424;
+        border-radius: 0.5rem;
+        opacity: 0.15;
       }
     }
 

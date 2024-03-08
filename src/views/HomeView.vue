@@ -65,6 +65,7 @@ main {
   height: 2rem;
   padding: 0.5rem;
   color: #ccc;
+  border-radius: 0.5rem;
 
   svg {
     width: 1rem;
