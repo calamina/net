@@ -3,12 +3,17 @@ import type Link from '@/models/link'
 import { ref, type Ref } from 'vue'
 import { useStorage } from '@vueuse/core'
 
-defineProps({
+const props = defineProps({
   title: String,
   color: String,
   icon: String,
   links: Array<Link>,
 })
+
+const altColor = adjust(props.color ?? '#000', -20) 
+const altColor2 = adjust(props.color ?? '#000', -50) 
+
+console.debug(altColor)
 
 const flag = useStorage('work-active', false) // returns Ref<boolean>
 
@@ -24,6 +29,10 @@ const switchSearch = (index: number) => {
     }, 0)
   }
 }
+
+function adjust(color: string, amount: number) {
+    return '#' + color.replace(/^#/, '').replace(/../g, color => ('0'+Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
+}
 </script>
 
 <template>
@@ -37,8 +46,7 @@ const switchSearch = (index: number) => {
         <a 
           v-if="activeSearch !== index"
           :href="link.url" 
-          class="link-section__item"
-          target="_blank">
+          class="link-section__item">
           {{ link.name }}
         </a>
         <a 
@@ -50,7 +58,10 @@ const switchSearch = (index: number) => {
         <form class="link-section__form" v-if="link.search && activeSearch === index" :action="link.search.url">
           <input @blur="switchSearch(index)" :id="'search' + index" class="link-section__search" type="text" :name="link.search.query" autocomplete="off" />
         </form>
-        <button v-if="link.search && activeSearch !== index" class="link-section__switch" @click="switchSearch(index)">◈</button>
+        <!-- <button v-if="link.search && activeSearch !== index" class="link-section__switch" @click="switchSearch(index)">◈</button> -->
+        <!-- <button v-if="link.search && activeSearch !== index" class="link-section__switch" @click="switchSearch(index)">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l3 3l3-3l-3-3z"></path><path d="M15 12l3 3l3-3l-3-3z"></path><path d="M9 6l3 3l3-3l-3-3z"></path><path d="M9 18l3 3l3-3l-3-3z"></path></g></svg>
+        </button> -->
       </div>
     </nav>
   </div>
@@ -121,7 +132,7 @@ const switchSearch = (index: number) => {
     display: flex;
     align-items: center;
     height: 2rem;
-    gap: 1rem;
+    gap: .25rem;
     width: 100%;
   }
   
@@ -130,6 +141,7 @@ const switchSearch = (index: number) => {
     font-size: 1rem;
     display: flex;
     align-items: center;
+    border-radius: 0.5rem;
     width: 100%;
     height: 2rem;
     color: white;
@@ -139,31 +151,14 @@ const switchSearch = (index: number) => {
     position: relative;
     
     &:hover {
-      background-color: v-bind(color);
       color: #242424;
+      background-color: v-bind(altColor);
       padding-left: 0.75rem;
-      
-      &::before {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        content: '';
-        width: 100%;
-        height: 100%;
-        padding-right: 0.5rem;
-        background-color: #242424;
-        border-radius: 0.5rem;
-        opacity: 0.15;
-      }
     }
 
     &--alt {
-      opacity: 0.6;
+      color: v-bind(altColor2);
       width: fit-content;
-
-      &:hover {
-        opacity: 1;
-      }
     }
   }
 
@@ -176,19 +171,25 @@ const switchSearch = (index: number) => {
     font-style: oblique;
     background-color: v-bind(color);
     outline: none;
-    width: 11.5rem;
+    width: 14rem;
+    width: 100%;
   } 
 
   &__switch {
     width: 2rem;
     height: 2rem;
-    border-radius: 100%;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
     background-color: transparent;
     color: v-bind(color);
     color: #242424;
     border: none;
     outline: none;
     cursor: pointer;
+
+    &:hover {
+      background-color: v-bind(altColor);
+    }
   }
 }
 </style>
