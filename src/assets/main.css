@@ -6,6 +6,16 @@
   src: url('../assets/FontsFree-Net-ApercuMono.ttf') format('woff2');
 }
 
+[data-selected-theme="light"] {
+  --color-background: #eee; 
+  --color-text : #242424;
+}
+
+[data-selected-theme="dark"] { 
+  --color-background: #242424; 
+  --color-text: #eee; 
+}
+
 * {
   font-family: monospace;
   font-family: 'Apercu', monospace;
@@ -13,8 +23,7 @@
 }
 
 html {
-  /* background-color: #242424; */
-  background-color: #eee;
+  background-color: var(--color-background);
 }
 
 #app {

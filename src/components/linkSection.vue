@@ -82,8 +82,7 @@ function adjust(color: string, amount: number) {
     &::after {
       z-index: 100;
       border-bottom-left-radius: 0.5rem;
-      background-color: #eee;
-      // background-color: #242424;
+      background-color: var(--color-background);
     }
   }
 
