@@ -12,7 +12,7 @@ const props = defineProps({
 const altColor = adjust(props.color ?? '#000', -20)
 const altColor2 = adjust(props.color ?? '#000', -50)
 
-const flag = useStorage('work-active', false) // returns Ref<boolean>
+const work = useStorage('work-active', false) // returns Ref<boolean>
 
 function adjust(color: string, amount: number) {
   return '#' + color.replace(/^#/, '').replace(/../g, color => ('0' + Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2))
@@ -20,7 +20,7 @@ function adjust(color: string, amount: number) {
 </script>
 
 <template>
-  <div class="link-section" v-if="title === 'work' ? flag : true">
+  <div class="link-section" v-if="title === 'work' ? work : true">
     <h2 class="link-section__title">
       <svg class="link-section__title__icon" v-html="icon" alt="icon"></svg>
       {{ title }}
@@ -82,7 +82,8 @@ function adjust(color: string, amount: number) {
     &::after {
       z-index: 100;
       border-bottom-left-radius: 0.5rem;
-      background-color: #242424;
+      background-color: #eee;
+      // background-color: #242424;
     }
   }
 

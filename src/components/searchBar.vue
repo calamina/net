@@ -42,7 +42,7 @@ function setSearch() {
   gap: 0.5rem;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  background-color: #66a886;
+  background-color: #66a8a5;
   height: 3rem;
 }
 
@@ -53,6 +53,8 @@ form {
     padding: 0.5rem;
     border-radius: 0.5rem;
     border: none;
+    color: #242424;
+    font-style: oblique;
     outline: none;
     background-color: transparent;
   }
@@ -65,6 +67,6 @@ form {
   border-radius: 0.5rem;
   color: #242424;
   width: 5rem;
-  background-color: #468263;
+  background-color: #599b98;
 }
 </style>
