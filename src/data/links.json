@@ -41,19 +41,11 @@
     "links": [
       {
         "name": "youtube",
-        "url": "https://youtube.com",
-        "search": {
-          "url": "https://www.youtube.com/results",
-          "query": "search_query"
-        }
+        "url": "https://youtube.com"
       },
       {
         "name": "wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Main_Page",
-        "search": {
-          "url": "https://en.wikipedia.org/w/index.php",
-          "query": "search"
-        }
+        "url": "https://en.wikipedia.org/wiki/Main_Page"
       },
       {
         "name": "chan",
@@ -126,43 +118,27 @@
     "links": [
       {
         "name": "yts",
-        "url": "https://yts.homes/",
-        "search": {
-          "url": "https://yts.homes/search",
-          "query": "q"
-        }
+        "url": "https://yts.homes/"
       },
       {
         "name": "discogs",
-        "url": "https://discogs.org",
-        "search": {
-          "url": "https://www.discogs.com/search/",
-          "query": "q"
-        }
+        "url": "https://discogs.org"
       },
       {
         "name": "bandcamp",
-        "url": "https://bandcamp.com/",
-        "search": {
-          "url": "https://www.discogs.com/search/",
-          "query": "q"
-        }
+        "url": "https://bandcamp.com/"
       },
       {
         "name": "1337x",
-        "url": "https://1337xxx.to",
-        "search": {
-          "url": "https://www.1337xxx.to/search/",
-          "query": ""
-        }
+        "url": "https://1337xxx.to"
       },
       {
         "name": "scq",
-        "url": "https://senscritique.com",
-        "search": {
-          "url": "https://www.senscritique.com/search",
-          "query": "query"
-        }
+        "url": "https://senscritique.com"
+      },
+      {
+        "name": "anilist",
+        "url": "https://anilist.co/home"
       }
     ]
   }

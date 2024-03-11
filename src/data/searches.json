@@ -1,0 +1,47 @@
+[
+  {
+    "name": "yt",
+      "url": "https://www.youtube.com/results",
+      "query": "search_query"
+  },
+  {
+    "name": "w",
+      "url": "https://en.wikipedia.org/w/index.php",
+      "query": "search"
+  },
+  {
+    "name": "yts",
+      "url": "https://yts.homes/search",
+      "query": "q"
+  },
+  {
+    "name": "dis",
+      "url": "https://www.discogs.com/search/",
+      "query": "q"
+  },
+  {
+    "name": "bc",
+      "url": "https://www.discogs.com/search/",
+      "query": "q"
+  },
+  {
+    "name": "1337",
+      "url": "https://www.1337xxx.to/search/",
+      "query": ""
+  },
+  {
+    "name": "scq",
+      "url": "https://www.senscritique.com/search",
+      "query": "query"
+  },
+  {
+    "name": "ani",
+      "url": "https://anilist.co/search/anime?sort=SEARCH_MATCH",
+      "query": "search"
+  },
+  {
+    "name": "g",
+      "url": "https://www.google.com/search?hl=en&",
+      "query": "q"
+  }
+]

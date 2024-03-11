@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type Link from '@/models/link'
-import { ref, type Ref } from 'vue'
 import { useStorage } from '@vueuse/core'
 
 const props = defineProps({
@@ -10,28 +9,13 @@ const props = defineProps({
   links: Array<Link>,
 })
 
-const altColor = adjust(props.color ?? '#000', -20) 
-const altColor2 = adjust(props.color ?? '#000', -50) 
-
-console.debug(altColor)
+const altColor = adjust(props.color ?? '#000', -20)
+const altColor2 = adjust(props.color ?? '#000', -50)
 
 const flag = useStorage('work-active', false) // returns Ref<boolean>
 
-
-const activeSearch: Ref<number | null> = ref(null)
-
-const switchSearch = (index: number) => {
-  activeSearch.value !== index ? activeSearch.value = index : activeSearch.value = null
-  if(activeSearch.value == index) {
-    setTimeout(() => {
-      const input = document.getElementById('search' + index) as HTMLInputElement
-      input?.focus()
-    }, 0)
-  }
-}
-
 function adjust(color: string, amount: number) {
-    return '#' + color.replace(/^#/, '').replace(/../g, color => ('0'+Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
+  return '#' + color.replace(/^#/, '').replace(/../g, color => ('0' + Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2))
 }
 </script>
 
@@ -43,32 +27,19 @@ function adjust(color: string, amount: number) {
     </h2>
     <nav class="link-section__list">
       <div class="link-section__link" v-for="(link, index) in links" :key="index">
-        <a 
-          v-if="activeSearch !== index"
-          :href="link.url" 
-          class="link-section__item">
+        <a :href="link.url" class="link-section__item">
           {{ link.name }}
         </a>
-        <a 
-          v-for="(alt, index) in link.alt" :key="index"
-          :href="alt.url" 
+        <a v-for="(alt, index) in link.alt" :key="index" :href="alt.url"
           class="link-section__item link-section__item--alt">
           {{ alt.name }}
         </a>
-        <form class="link-section__form" v-if="link.search && activeSearch === index" :action="link.search.url">
-          <input @blur="switchSearch(index)" :id="'search' + index" class="link-section__search" type="text" :name="link.search.query" autocomplete="off" />
-        </form>
-        <!-- <button v-if="link.search && activeSearch !== index" class="link-section__switch" @click="switchSearch(index)">◈</button> -->
-        <!-- <button v-if="link.search && activeSearch !== index" class="link-section__switch" @click="switchSearch(index)">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l3 3l3-3l-3-3z"></path><path d="M15 12l3 3l3-3l-3-3z"></path><path d="M9 6l3 3l3-3l-3-3z"></path><path d="M9 18l3 3l3-3l-3-3z"></path></g></svg>
-        </button> -->
       </div>
     </nav>
   </div>
 </template>
 
 <style scoped lang="scss">
-
 .link-section {
   display: flex;
   flex-direction: column;
@@ -93,7 +64,8 @@ function adjust(color: string, amount: number) {
       height: 1rem;
     }
 
-    &::before, &::after {
+    &::before,
+    &::after {
       position: absolute;
       right: -0.5rem;
       bottom: 0;
@@ -106,6 +78,7 @@ function adjust(color: string, amount: number) {
       z-index: 50;
       background-color: v-bind(color);
     }
+
     &::after {
       z-index: 100;
       border-bottom-left-radius: 0.5rem;
@@ -135,7 +108,7 @@ function adjust(color: string, amount: number) {
     gap: .25rem;
     width: 100%;
   }
-  
+
   &__item {
     padding: 0 .5rem;
     font-size: 1rem;
@@ -149,7 +122,7 @@ function adjust(color: string, amount: number) {
     color: #242424;
     transition: padding-left 0.2s;
     position: relative;
-    
+
     &:hover {
       color: #242424;
       background-color: v-bind(altColor);
@@ -159,36 +132,6 @@ function adjust(color: string, amount: number) {
     &--alt {
       color: v-bind(altColor2);
       width: fit-content;
-    }
-  }
-
-  &__search {
-    font-size: 1rem;
-    height: 2rem;
-    border: none;
-    color: #242424;
-    padding: 0 0.5rem;
-    font-style: oblique;
-    background-color: v-bind(color);
-    outline: none;
-    width: 14rem;
-    width: 100%;
-  } 
-
-  &__switch {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 0.5rem;
-    padding: 0.3rem;
-    background-color: transparent;
-    color: v-bind(color);
-    color: #242424;
-    border: none;
-    outline: none;
-    cursor: pointer;
-
-    &:hover {
-      background-color: v-bind(altColor);
     }
   }
 }
