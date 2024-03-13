@@ -51,8 +51,8 @@ main {
   min-height: 100vh;
   width: 100vw;
   padding: 2rem 0;
-  display: grid;
-  grid-template-rows: 3rem auto;
+  display: flex;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
@@ -90,8 +90,8 @@ main {
   right: 1rem;
 
   &.activeWork {
-    color: #242424;
-    background-color: #ccc;
+    color: var(--color-text);
+    background-color: var(--color-background-clear);
   }
 }
 

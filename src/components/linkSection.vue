@@ -72,6 +72,7 @@ function adjust(color: string, amount: number) {
       content: '';
       width: 0.5rem;
       height: 0.5rem;
+      transition: background-color 0.4s;
     }
 
     &::before {

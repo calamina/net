@@ -8,11 +8,13 @@
 
 [data-selected-theme="light"] {
   --color-background: #eee; 
+  --color-background-clear: #fff; 
   --color-text : #242424;
 }
 
 [data-selected-theme="dark"] { 
   --color-background: #242424; 
+  --color-background-clear: #323232; 
   --color-text: #eee; 
 }
 
@@ -24,6 +26,7 @@
 
 html {
   background-color: var(--color-background);
+  transition: background-color 0.4s;
 }
 
 #app {

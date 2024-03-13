@@ -39,9 +39,11 @@ function setSearch() {
   border-radius: 0.5rem;
   padding: 0.5rem;
   height: 3rem;
-  width: 100%;
+  // width: 100%;
   align-self: center;
-  background-color: #66a8a5;
+  background-color: var(--color-background-clear);
+  // background-color: #66a8a5;
+  transition: background-color 0.4s;
 }
 
 form {
@@ -53,7 +55,7 @@ form {
     padding: 0.5rem;
     border-radius: 0.5rem;
     border: none;
-    color: #242424;
+    color: var(--color-text);
     font-style: oblique;
     outline: none;
     background-color: transparent;
@@ -65,8 +67,10 @@ form {
   background-color: transparent;
   border: none;
   border-radius: 0.5rem;
-  color: #242424;
+  color: var(--color-text);
   width: 5rem;
-  background-color: #599b98;
+  background-color: var(--color-background);
+  transition: background-color 0.4s;
+  // background-color: #599b98;
 }
 </style>
