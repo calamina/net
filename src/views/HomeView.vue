@@ -88,6 +88,7 @@ main {
 
 .toggleWork {
   right: 1rem;
+  transition: background-color 0.4s;
 
   &.activeWork {
     color: var(--color-text);
