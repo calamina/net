@@ -7,16 +7,14 @@ const props = defineProps({
   color: String,
   icon: String,
   links: Array<Link>,
+  index: Number,
 })
 
-const altColor = adjust(props.color ?? '#000', -20)
-const altColor2 = adjust(props.color ?? '#000', -50)
+const color = 'var(--color-section-' + props.index + ')'
+const colorAlt = 'var(--color-section-alt-' + props.index + ')'
+const colorAlt2 = 'var(--color-section-alt-sub-' + props.index + ')'
 
-const work = useStorage('work-active', false) // returns Ref<boolean>
-
-function adjust(color: string, amount: number) {
-  return '#' + color.replace(/^#/, '').replace(/../g, color => ('0' + Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2))
-}
+const work = useStorage('work-active', false)
 </script>
 
 <template>
@@ -58,6 +56,7 @@ function adjust(color: string, amount: number) {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
     position: relative;
+    transition: background-color 0.4s;
 
     &__icon {
       width: 1rem;
@@ -88,18 +87,18 @@ function adjust(color: string, amount: number) {
   }
 
   &__list {
-    padding: .5rem;
+    padding: .75rem;
     display: flex;
     flex-flow: column;
     width: 15rem;
     height: 100%;
     gap: 0.25rem;
     justify-content: center;
-    border: 4px solid v-bind(color);
     background-color: v-bind(color);
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
+    transition: background-color 0.4s;
   }
 
   &__link {
@@ -126,12 +125,12 @@ function adjust(color: string, amount: number) {
 
     &:hover {
       color: #242424;
-      background-color: v-bind(altColor);
+      background-color: v-bind(colorAlt);
       padding-left: 0.75rem;
     }
 
     &--alt {
-      color: v-bind(altColor2);
+      color: v-bind(colorAlt2);
       width: fit-content;
     }
   }

@@ -2,14 +2,17 @@
 
 # TODO
 
-- Add bang list button and section
+- add shortcuts
+ctrl + l = list
+ctrl + f = focus input
 
-- Add a way to go to url directly
+- add weather ?
 
 - Add more themes
-- Separate dark/light from theme
 
 - bangs to add (needs more fields for aditional data...) :
 !gi (Google Images)
 !gt (Google Translate)
 !gmap (Google Map)
+
+- better css
