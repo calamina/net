@@ -43,5 +43,20 @@
     "name": "g",
       "url": "https://www.google.com/search?hl=en&",
       "query": "q"
+  },
+  {
+    "name": "gi",
+      "url": "https://www.google.com/search",
+      "query": "q"
+  },
+  {
+    "name": "gm",
+      "url": "https://www.google.com/maps?hl=en",
+      "query": "q"
+  },
+  {
+    "name": "gt",
+      "url": "https://www.google.com/search?hl=en&",
+      "query": "q"
   }
 ]

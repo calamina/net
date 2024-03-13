@@ -7,10 +7,11 @@ const activeSearch = ref({ name: 'g', url: 'https://www.google.com/search?hl=en&
 const input = ref('') 
 
 function setSearch() {
-  const net: RegExpMatchArray | string | null = input.value.match(/[!][a-z0-9]+$/); 
+  const net: RegExpMatchArray | string | null = input.value.match(/[!][a-z0-9]+[ ]$/); 
+  console.debug(net)
   if(!net?.length) return
   const search  = searches.find(
-    search => search.name === net[0].slice(1))
+    search => search.name === net[0].slice(1).trim())
   if(!search) return 
   input.value = input.value.replace(net[0], '')
   activeSearch.value = search
@@ -42,7 +43,6 @@ function setSearch() {
   // width: 100%;
   align-self: center;
   background-color: var(--color-background-clear);
-  // background-color: #66a8a5;
   transition: background-color 0.4s;
 }
 
@@ -71,6 +71,5 @@ form {
   width: 5rem;
   background-color: var(--color-background);
   transition: background-color 0.4s;
-  // background-color: #599b98;
 }
 </style>
