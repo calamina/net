@@ -14,11 +14,11 @@ function toggleWork() {
 
 function handleThemeSelection() {
   theme.value = theme.value === "dark" ? "light" : "dark";
-  document.documentElement.setAttribute("data-selected-theme", theme.value);
+  document.documentElement.setAttribute("theme", theme.value);
 }
 
 onMounted(() => {
-  document.documentElement.setAttribute("data-selected-theme", theme.value);
+  document.documentElement.setAttribute("theme", theme.value);
 })
 </script>
 

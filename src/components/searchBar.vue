@@ -8,7 +8,6 @@ const input = ref('')
 const showList = ref(false)
 
 watch(input, () => {
-  console.debug(activeSearch.value)
   setSearch()
 })
 
@@ -26,7 +25,7 @@ function setSearch() {
   const bang: RegExpMatchArray | string | null = input.value.match(/[!][a-z0-9]+[ ]$/); 
   if(!bang?.length) return
   const search  = searches.find(
-    search => search.name === bang[0].slice(1).trim())
+    (search: Search) => search.name === bang[0].slice(1).trim())
   if(!search) return 
   input.value = input.value.replace(bang[0], '')
   activeSearch.value = search
@@ -57,7 +56,7 @@ function toggleList(search: any) {
     </div>
     <Transition>
       <div class="list" v-if="showList">
-        <button v-for="search in searches" :key="search.name" @click="toggleList(search)">
+        <button v-for="search in (searches as Search[])" :key="search.name" @click="toggleList(search)">
           {{search.name}}
         </button>
       </div>

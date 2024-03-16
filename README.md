@@ -1,10 +1,7 @@
 ![screen](/netstart.png?raw=true "netstart")
 
 # TODO
-
-- add shortcuts
-ctrl + l = list
-ctrl + f = focus input
+- disable theme transition on first load :/ 
 
 - add weather ?
 
