@@ -5,17 +5,11 @@ import links from '@/data/links.json'
 import linkSection from '@/components/linkSection.vue'
 import searchBar from '@/components/searchBar.vue'
 
-const colorMode = useColorMode({
-  emitAuto: true,
-  modes: {
-    light: 'light',
-    dark: 'dark',
-  },
-  attribute: 'theme',
-})
-const { state, next } = useCycleList(['dark', 'light'], { initialValue: colorMode.value })
-const work = useStorage('work-active', false)
+const themes = { light: 'light', dark: 'dark' }
+const colorMode = useColorMode({  emitAuto: true,  modes: themes,  attribute: 'theme'})
+const { state, next } = useCycleList(Object.values(themes), { initialValue: colorMode.value })
 
+const work = useStorage('work-active', false)
 function toggleWork() {
   work.value = !work.value
 }
