@@ -104,7 +104,6 @@ function toggleList(search: any) {
     border-radius: 0.5rem;
     color: var(--color-text);
     background-color: var(--color-background-clear);
-    transition: background-color 0.4s;
   }
 }
 
@@ -120,7 +119,6 @@ function toggleList(search: any) {
   height: 100%;
   width: 100%;
   background-color: var(--color-background-clear);
-  transition: background-color 0.4s;
 }
 
 form {
@@ -150,7 +148,6 @@ form {
   color: var(--color-text);
   width: 5rem;
   background-color: var(--color-background);
-  transition: background-color 0.4s;
 }
 .button-alt {
   background-color: var(--color-background-clear);

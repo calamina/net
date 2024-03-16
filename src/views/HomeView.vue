@@ -1,29 +1,33 @@
 <script setup lang="ts">
+import { watchEffect } from 'vue'
+import { useColorMode, useStorage, useCycleList, type BasicColorMode, useNow, useDateFormat } from '@vueuse/core'
 import links from '@/data/links.json'
 import linkSection from '@/components/linkSection.vue'
 import searchBar from '@/components/searchBar.vue'
-import { useStorage } from '@vueuse/core'
-import { onMounted } from 'vue'
 
+const colorMode = useColorMode({
+  emitAuto: true,
+  modes: {
+    light: 'light',
+    dark: 'dark',
+  },
+  attribute: 'theme',
+})
+const { state, next } = useCycleList(['dark', 'light'], { initialValue: colorMode.value })
 const work = useStorage('work-active', false)
-const theme = useStorage('theme', 'light')
 
 function toggleWork() {
   work.value = !work.value
 }
 
-function handleThemeSelection() {
-  theme.value = theme.value === "dark" ? "light" : "dark";
-  document.documentElement.setAttribute("theme", theme.value);
-}
+const now = useDateFormat(useNow(), 'MMMM D') 
 
-onMounted(() => {
-  document.documentElement.setAttribute("theme", theme.value);
-})
+watchEffect(() => colorMode.value = state.value as BasicColorMode)
 </script>
 
 <template>
   <main>
+    <p>{{ now }}</p>
     <searchBar />
     <div class="links">
       <linkSection 
@@ -39,7 +43,7 @@ onMounted(() => {
       <svg  xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 24 24'><g fill='none' stroke='currentColor' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='7' width='18' height='13' rx='2'></rect><path d='M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path><path d='M12 12v.01'></path><path d='M3 13a20 20 0 0 0 18 0'></path></g></svg>
       work
     </button>
-    <button @click="handleThemeSelection" class="theme-button">
+    <button @click="next()" class="theme-button">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v18"></path><path d="M12 14l7-7"></path><path d="M12 19l8.5-8.5"></path><path d="M12 9l4.5-4.5"></path></g></svg>
       theme
     </button>
@@ -89,7 +93,6 @@ main {
 
 .toggleWork {
   right: 1rem;
-  transition: background-color 0.4s;
 
   &.activeWork {
     color: var(--color-text);

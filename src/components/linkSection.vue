@@ -56,7 +56,6 @@ const work = useStorage('work-active', false)
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
     position: relative;
-    transition: background-color 0.4s;
 
     &__icon {
       width: 1rem;
@@ -71,7 +70,6 @@ const work = useStorage('work-active', false)
       content: '';
       width: 0.5rem;
       height: 0.5rem;
-      transition: background-color 0.4s;
     }
 
     &::before {
@@ -98,7 +96,6 @@ const work = useStorage('work-active', false)
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
-    transition: background-color 0.4s;
   }
 
   &__link {
