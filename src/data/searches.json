@@ -20,11 +20,6 @@
       "query": "q"
   },
   {
-    "name": "bc",
-      "url": "https://www.discogs.com/search/",
-      "query": "q"
-  },
-  {
     "name": "1337",
       "url": "https://www.1337xxx.to/search/",
       "query": ""
@@ -47,16 +42,24 @@
   {
     "name": "gi",
       "url": "https://www.google.com/search",
-      "query": "q"
+      "query": "q",
+      "option": {
+        "name": "tbm",
+        "value": "isch"
+      }
   },
   {
     "name": "gm",
-      "url": "https://www.google.com/maps?hl=en",
-      "query": "q"
+      "url": "https://www.google.com/maps/search/",
+      "query": "query",
+      "option": {
+        "name": "api",
+        "value": "1"
+      }
   },
   {
     "name": "gt",
-      "url": "https://www.google.com/search?hl=en&",
-      "query": "q"
+      "url": "https://translate.google.com",
+      "query": "text"
   }
 ]

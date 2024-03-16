@@ -1,12 +1,14 @@
 <script setup lang="ts">
+import type Search from '@/models/search'
 import searches from '@/data/searches.json'
-import { ref, watch } from 'vue'
+import { ref, watch, type Ref } from 'vue'
 
-const activeSearch = ref({ name: 'g', url: 'https://www.google.com/search?hl=en&', query: 'q' })
+const activeSearch: Ref<Search> = ref({ name: 'g', url: 'https://www.google.com/search?hl=en&', query: 'q' })
 const input = ref('') 
 const showList = ref(false)
 
-watch(input, (value) => {
+watch(input, () => {
+  console.debug(activeSearch.value)
   setSearch()
 })
 
@@ -46,6 +48,7 @@ function toggleList(search: any) {
     </div>
     <form :action="activeSearch.url">
       <input v-model="input" class="input" type="text" :name="activeSearch.query" autocomplete="off" autofocus placeholder="...">
+      <input v-if="activeSearch.option" type="hidden" :name="activeSearch.option.name" :value="activeSearch.option.value" />
     </form>
     </div>
     <button class="button button-alt" @click="showList = !showList">

@@ -10,9 +10,4 @@ ctrl + f = focus input
 
 - Add more themes
 
-- bangs to add (needs more fields for aditional data...) :
-!gi (Google Images)
-!gt (Google Translate)
-!gmap (Google Map)
-
 - better css
