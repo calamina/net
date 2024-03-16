@@ -27,7 +27,7 @@ watchEffect(() => colorMode.value = state.value as BasicColorMode)
 
 <template>
   <main>
-    <p>{{ now }}</p>
+    <!-- <p>{{ now }}</p> -->
     <searchBar />
     <div class="links">
       <linkSection 
