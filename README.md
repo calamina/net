@@ -1,8 +1,9 @@
 ![screen](/netstart.png?raw=true "netstart")
 
 # TODO
-- add weather ?
 
 - Add more themes
 
-- better css
+- clean and refactor css
+
+- (add sfw attribute to links / disable on work active)
