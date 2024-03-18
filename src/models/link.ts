@@ -3,4 +3,5 @@ export default interface Link {
   url: string
   altName?: string
   alt?: { name: string; url: string }[]
+  nsfw?: boolean
 }

@@ -1,0 +1,167 @@
+[theme="light"] {
+  --color-background: #eee; 
+  --color-background-clear: #fff; 
+  --color-text : #242424;
+  --color-section-0 : #ffcdb2;
+  --color-section-1 : #ffb4a2;
+  --color-section-2 : #e5989b;
+  --color-section-3 : #b5838d;
+  --color-section-4 : #6d6875;
+  --color-section-alt-0 : #E6B9A0;
+  --color-section-alt-1 : #E6A292;
+  --color-section-alt-2 : #CE898C;
+  --color-section-alt-3 : #A3767F;
+  --color-section-alt-4 : #625E69;
+  --color-section-alt-sub-0 : #997B6B;
+  --color-section-alt-sub-1 : #996C61;
+  --color-section-alt-sub-2 : #895B5D;
+  --color-section-alt-sub-3 : #6D4F55;
+  --color-section-alt-sub-4 : #413E46;
+}
+
+[theme="dark"] { 
+  --color-background: #242424; 
+  --color-background-clear: #323232; 
+  --color-text: #7e7985; 
+  --color-section-0 : #ffcdb2;
+  --color-section-1 : #ffb4a2;
+  --color-section-2 : #e5989b;
+  --color-section-3 : #b5838d;
+  --color-section-4 : #6d6875;
+  --color-section-alt-0 : #E6B9A0;
+  --color-section-alt-1 : #E6A292;
+  --color-section-alt-2 : #CE898C;
+  --color-section-alt-3 : #A3767F;
+  --color-section-alt-4 : #625E69;
+  --color-section-alt-sub-0 : #997B6B;
+  --color-section-alt-sub-1 : #996C61;
+  --color-section-alt-sub-2 : #895B5D;
+  --color-section-alt-sub-3 : #6D4F55;
+  --color-section-alt-sub-4 : #413E46;
+}
+
+[theme="forest"] {
+  --color-background: hsl(160, 20%, 90%); 
+  --color-background-clear: #fff; 
+  --color-text : #242424;
+  --color-section-0 : hsl(160, 20%, 95%);
+  --color-section-1 : hsl(160, 20%, 80%);
+  --color-section-2 : hsl(160, 20%, 65%);
+  --color-section-3 : hsl(160, 20%, 50%);
+  --color-section-4 : hsl(160, 20%, 35%);
+  --color-section-alt-0 : hsl(160, 20%, 90%);
+  --color-section-alt-1 : hsl(160, 20%, 75%);
+  --color-section-alt-2 : hsl(160, 20%, 60%);
+  --color-section-alt-3 : hsl(160, 20%, 45%);
+  --color-section-alt-4 : hsl(160, 20%, 30%);
+  --color-section-alt-sub-0 : hsl(160, 20%, 75%);
+  --color-section-alt-sub-1 : hsl(160, 20%, 60%);
+  --color-section-alt-sub-2 : hsl(160, 20%, 45%);
+  --color-section-alt-sub-3 : hsl(160, 20%, 30%);
+  --color-section-alt-sub-4 : hsl(160, 20%, 15%);
+}
+
+[theme="forestdark"] {
+  --color-background: hsl(160, 20%, 10%); 
+  --color-background-clear: hsl(160, 20%, 15%); 
+  --color-text : hsl(160, 20%, 40%);
+  --color-section-0 : hsl(160, 20%, 95%);
+  --color-section-1 : hsl(160, 20%, 80%);
+  --color-section-2 : hsl(160, 20%, 65%);
+  --color-section-3 : hsl(160, 20%, 50%);
+  --color-section-4 : hsl(160, 20%, 35%);
+  --color-section-alt-0 : hsl(160, 20%, 90%);
+  --color-section-alt-1 : hsl(160, 20%, 75%);
+  --color-section-alt-2 : hsl(160, 20%, 60%);
+  --color-section-alt-3 : hsl(160, 20%, 45%);
+  --color-section-alt-4 : hsl(160, 20%, 30%);
+  --color-section-alt-sub-0 : hsl(160, 20%, 75%);
+  --color-section-alt-sub-1 : hsl(160, 20%, 60%);
+  --color-section-alt-sub-2 : hsl(160, 20%, 45%);
+  --color-section-alt-sub-3 : hsl(160, 20%, 30%);
+  --color-section-alt-sub-4 : hsl(160, 20%, 15%);
+}
+
+[theme="choco"] {
+  --color-background: hsl(20, 20%, 90%); 
+  --color-background-clear: #fff; 
+  --color-text : #242424;
+  --color-section-0 : hsl(20, 20%, 95%);
+  --color-section-1 : hsl(20, 20%, 80%);
+  --color-section-2 : hsl(20, 20%, 65%);
+  --color-section-3 : hsl(20, 20%, 50%);
+  --color-section-4 : hsl(20, 20%, 35%);
+  --color-section-alt-0 : hsl(20, 20%, 90%);
+  --color-section-alt-1 : hsl(20, 20%, 75%);
+  --color-section-alt-2 : hsl(20, 20%, 60%);
+  --color-section-alt-3 : hsl(20, 20%, 45%);
+  --color-section-alt-4 : hsl(20, 20%, 30%);
+  --color-section-alt-sub-0 : hsl(20, 20%, 75%);
+  --color-section-alt-sub-1 : hsl(20, 20%, 60%);
+  --color-section-alt-sub-2 : hsl(20, 20%, 45%);
+  --color-section-alt-sub-3 : hsl(20, 20%, 30%);
+  --color-section-alt-sub-4 : hsl(20, 20%, 15%);
+}
+
+[theme="chocodark"] {
+  --color-background: hsl(20, 20%, 10%); 
+  --color-background-clear: hsl(20, 20%, 15%); 
+  --color-text : hsl(20, 20%, 40%);
+  --color-section-0 : hsl(20, 20%, 95%);
+  --color-section-1 : hsl(20, 20%, 80%);
+  --color-section-2 : hsl(20, 20%, 65%);
+  --color-section-3 : hsl(20, 20%, 50%);
+  --color-section-4 : hsl(20, 20%, 35%);
+  --color-section-alt-0 : hsl(20, 20%, 90%);
+  --color-section-alt-1 : hsl(20, 20%, 75%);
+  --color-section-alt-2 : hsl(20, 20%, 60%);
+  --color-section-alt-3 : hsl(20, 20%, 45%);
+  --color-section-alt-4 : hsl(20, 20%, 30%);
+  --color-section-alt-sub-0 : hsl(20, 20%, 75%);
+  --color-section-alt-sub-1 : hsl(20, 20%, 60%);
+  --color-section-alt-sub-2 : hsl(20, 20%, 45%);
+  --color-section-alt-sub-3 : hsl(20, 20%, 30%);
+  --color-section-alt-sub-4 : hsl(20, 20%, 15%);
+}
+
+[theme="lavender"] {
+  --color-background: hsl(250, 20%, 90%); 
+  --color-background-clear: #fff; 
+  --color-text : #242424;
+  --color-section-0 : hsl(250, 20%, 95%);
+  --color-section-1 : hsl(250, 20%, 80%);
+  --color-section-2 : hsl(250, 20%, 65%);
+  --color-section-3 : hsl(250, 20%, 50%);
+  --color-section-4 : hsl(250, 20%, 35%);
+  --color-section-alt-0 : hsl(250, 20%, 90%);
+  --color-section-alt-1 : hsl(250, 20%, 75%);
+  --color-section-alt-2 : hsl(250, 20%, 60%);
+  --color-section-alt-3 : hsl(250, 20%, 45%);
+  --color-section-alt-4 : hsl(250, 20%, 30%);
+  --color-section-alt-sub-0 : hsl(250, 20%, 75%);
+  --color-section-alt-sub-1 : hsl(250, 20%, 60%);
+  --color-section-alt-sub-2 : hsl(250, 20%, 45%);
+  --color-section-alt-sub-3 : hsl(250, 20%, 30%);
+  --color-section-alt-sub-4 : hsl(250, 20%, 15%);
+}
+
+[theme="lavenderdark"] {
+  --color-background: hsl(250, 20%, 10%); 
+  --color-background-clear: hsl(250, 20%, 15%); 
+  --color-text : hsl(250, 20%, 40%);
+  --color-section-0 : hsl(250, 20%, 95%);
+  --color-section-1 : hsl(250, 20%, 80%);
+  --color-section-2 : hsl(250, 20%, 65%);
+  --color-section-3 : hsl(250, 20%, 50%);
+  --color-section-4 : hsl(250, 20%, 35%);
+  --color-section-alt-0 : hsl(250, 20%, 90%);
+  --color-section-alt-1 : hsl(250, 20%, 75%);
+  --color-section-alt-2 : hsl(250, 20%, 60%);
+  --color-section-alt-3 : hsl(250, 20%, 45%);
+  --color-section-alt-4 : hsl(250, 20%, 30%);
+  --color-section-alt-sub-0 : hsl(250, 20%, 75%);
+  --color-section-alt-sub-1 : hsl(250, 20%, 60%);
+  --color-section-alt-sub-2 : hsl(250, 20%, 45%);
+  --color-section-alt-sub-3 : hsl(250, 20%, 30%);
+  --color-section-alt-sub-4 : hsl(250, 20%, 15%);
+}

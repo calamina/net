@@ -41,18 +41,18 @@ function toggleList(search: any) {
 <template>
   <div class="wrapper">
     <div class="search-bar">
-    <div class="search">
-    <div class="button">
-      {{activeSearch.name}}
-    </div>
-    <form :action="activeSearch.url">
-      <input v-model="input" class="input" type="text" :name="activeSearch.query" autocomplete="off" autofocus placeholder="...">
-      <input v-if="activeSearch.option" type="hidden" :name="activeSearch.option.name" :value="activeSearch.option.value" />
-    </form>
-    </div>
-    <button class="button button-alt" @click="showList = !showList">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h12"></path></g></svg>
-    </button>
+      <div class="search">
+        <div class="button">
+          {{activeSearch.name}}
+        </div>
+        <form :action="activeSearch.url">
+          <input v-model="input" class="input" type="text" :name="activeSearch.query" autocomplete="off" autofocus placeholder="...">
+          <input v-if="activeSearch.option" type="hidden" :name="activeSearch.option.name" :value="activeSearch.option.value" />
+        </form>
+      </div>
+      <button class="button button-alt" @click="showList = !showList">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h12"></path></g></svg>
+      </button>
     </div>
     <Transition>
       <div class="list" v-if="showList">

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type Link from '@/models/link'
 import { useStorage } from '@vueuse/core'
+import { computed } from 'vue'
+
 
 const props = defineProps({
   title: String,
@@ -9,6 +11,9 @@ const props = defineProps({
   links: Array<Link>,
   index: Number,
 })
+
+const filteredLinks = computed(
+  () => props.links?.filter((link: Link) => !work.value ? link : !link.nsfw))
 
 const color = 'var(--color-section-' + props.index + ')'
 const colorAlt = 'var(--color-section-alt-' + props.index + ')'
@@ -24,7 +29,7 @@ const work = useStorage('work-active', false)
       {{ title }}
     </h2>
     <nav class="link-section__list">
-      <div class="link-section__link" v-for="(link, index) in links" :key="index">
+      <div class="link-section__link" v-for="(link, index) in filteredLinks" :key="index">
         <a :href="link.url" class="link-section__item">
           {{ link.name }}
         </a>

@@ -51,7 +51,8 @@
         "alt": [
           { "name": "tech", "url": "https://4chan.org/g/catalog" },
           { "name": "wall", "url": "https://4chan.org/wg/catalog" }
-        ]
+        ],
+        "nsfw": true
       },
       {
         "name": "showdown",
@@ -113,7 +114,8 @@
     "links": [
       {
         "name": "yts",
-        "url": "https://yts.homes/"
+        "url": "https://yts.homes/",
+        "nsfw": true
       },
       {
         "name": "discogs",
@@ -125,7 +127,8 @@
       },
       {
         "name": "1337x",
-        "url": "https://1337xxx.to"
+        "url": "https://1337xxx.to",
+        "nsfw": true
       },
       {
         "name": "scq",
