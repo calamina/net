@@ -1,23 +1,40 @@
 
 # Netstart
-[Link to preview](https://net-start.vercel.app)
+[net-start.vercel.app](https://net-start.vercel.app)
 
-Simple startpage implementing DuckDuckGo bangs and a link list.
-Theme and Work states are stored in the local storage so they persist between sessions and devices.
-Work button adds an extra category and disables all links with the nsfw attribute.
+Simple startpage implementing DuckDuckGo bangs and a link list
+
+`theme` and `work` states are stored in the local storage so they persist between sessions and devices
+
+`work` button adds an extra category and disables all links with the `nsfw` attribute
 
 ![screen](/netstart.png?raw=true "netstart")
 
 # Usage
-- search list available with the searchbar button
-- `!xx ` to search on xx website, or click the desired search engine in the list
+- The search list is available with the searchbar button
+- Type `!xx text` to search `text` on `xx` (where `xx` is an alias for a site), or click the desired search engine in the list
 
 # Customization
-- Edit link list in 'links.json' 
-- Edit searches list in 'searches.json'
-- Edit themes in 'themes.css'
+- Edit link list in `links.json` 
+- Edit searches list in `searches.json`
+- Edit themes in `themes.css`
 
 # TODO
-- Add info button & overlay
-- Keyboard navigation / shorcuts
-- Clean and refactor css
+- [ ] Clean and refactor css
+- [ ] Add localhost support
+- [ ] Keyboard navigation / shorcuts
+- [ ] Add info button & overlay
+- [ ] Add git link & license & date in overlay
+
+# Backlog
+- [x] DateTime (unused for now)
+- [x] Themes
+- [x] LocalStorage for states
+- [x] Search list + button
+- [x] Search urls
+- [x] Bangs
+- [x] Search
+- [x] Responsive (kindof)
+- [x] Models
+- [x] Data stored in json
+- [x] Link list
