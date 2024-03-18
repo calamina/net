@@ -1,5 +1,7 @@
 
 # Netstart
+[Link to preview](https://net-start.vercel.app)
+
 Simple startpage implementing DuckDuckGo like bangs and a link list.
 
 ![screen](/netstart.png?raw=true "netstart")
