@@ -71,7 +71,6 @@ function toggleList(search: any) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
 }
 
 .search-bar {
@@ -90,7 +89,8 @@ function toggleList(search: any) {
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   overflow: hidden;
-  max-height: 30rem;
+  height: 9.5rem;
+  margin-top: 0.5rem;
 
   button {
     display: flex;
@@ -167,12 +167,13 @@ form {
 
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 0.3s ease, max-height 0.3s ease;
+  transition: opacity 0.3s, height 0.3s, margin 0.3s;
 }
 
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
-  max-height: 0;
+  height: 0;
+  margin: 0;
 }
 </style>
