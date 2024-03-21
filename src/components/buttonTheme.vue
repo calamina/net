@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { useColorMode, useCycleList, type BasicColorMode } from '@vueuse/core'
-import { watchEffect } from 'vue'
+import { useColorMode, useCycleList, onClickOutside, type BasicColorMode } from '@vueuse/core'
+import { ref, watchEffect } from 'vue'
+
+const target = ref(null)
 
 const themes = { 
   light: 'light', 
@@ -12,27 +14,55 @@ const themes = {
   chocodark: "chocodark", 
   lavenderdark: "lavenderdark" 
 }
+
+const toggleThemes = ref(false);
+
+const displayThemes = Object.values(themes)
+
 const colorMode = useColorMode({  emitAuto: true,  modes: themes,  attribute: 'theme'})
-const { state, next } = useCycleList(Object.values(themes), { initialValue: colorMode.value })
+const { state, go } = useCycleList(Object.values(themes), { initialValue: colorMode.value })
 
 watchEffect(() => colorMode.value = state.value as BasicColorMode)
+
+onClickOutside(target, event => toggleThemes.value = false)
+
+function toggleTheme(index: number) {
+  go(index);
+  toggleThemes.value = !toggleThemes.value;
+}
 </script>
 
 <template>
-  <button @click="next()" class="theme-button">
+  <div class="wrapper" ref="target">
+    <Transition name="fade" mode="out-in">
+    <button v-if="!toggleThemes" @click="toggleThemes = !toggleThemes" class="theme-button">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v18"></path><path d="M12 14l7-7"></path><path d="M12 19l8.5-8.5"></path><path d="M12 9l4.5-4.5"></path></g></svg>
       theme
-  </button>
+    </button>
+    <div v-else class="themes">
+      <button :theme="theme" class="theme" v-for="(theme, index) in displayThemes" :key="index">
+        <span @click="toggleTheme(index)" class="color color0"></span>
+        <span @click="toggleTheme(index)" class="color color1"></span>
+        <span @click="toggleTheme(index)" class="color color2"></span>
+        <span @click="toggleTheme(index)" class="color color3"></span>
+        <span @click="toggleTheme(index)" class="color color4"></span>
+      </button>
+    </div>
+    </Transition>
+  </div>
 </template>
 
 <style scoped lang="scss">
 
-.theme-button {
+.wrapper {
   position: fixed;
-  display: flex;
-  align-items: center;
   bottom: 1rem;
   left: 1rem;
+}
+
+.theme-button {
+  display: flex;
+  align-items: center;
   gap: 0.5rem;
   padding: 0.5rem;
   border: none;
@@ -46,6 +76,67 @@ watchEffect(() => colorMode.value = state.value as BasicColorMode)
     width: 1rem;
     height: 1rem;
   }
+}
+
+.themes {
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  padding: 0.25rem 0.25rem;
+}
+
+.theme {
+  display: flex;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.color {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.5rem;
+
+  &+ .color {
+    margin-left: -0.25rem;
+  }
+}
+
+.color0 {
+  background-color: var(--color-background-clear);
+}
+.color1 {
+  background-color: var(--color-section-1);
+}
+
+.color2 {
+  background-color: var(--color-section-2);
+}
+
+.color3 {
+  background-color: var(--color-section-3);
+}
+
+.color4 {
+  background-color: var(--color-section-4);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.1s, transform 0.1s;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(0.5rem);
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-0.5rem);
 }
 
 </style>

@@ -72,7 +72,6 @@ function toggleList(search: any) {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  width: 25rem;
 }
 
 .search-bar {
@@ -127,6 +126,7 @@ form {
   .input {
     height: 100%;
     width: 100%;
+    width: 15rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
     border: none;
@@ -134,6 +134,11 @@ form {
     font-style: oblique;
     outline: none;
     background-color: transparent;
+    transition: width 0.3s;
+
+    &:focus {
+      width: 25rem;
+    }
   }
 }
 

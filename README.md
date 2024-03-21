@@ -4,9 +4,9 @@
 
 Simple startpage implementing DuckDuckGo bangs and a link list
 
-`theme` and `work` states are stored in the local storage so they persist between sessions and devices
+`theme` and `work` states are stored in the local storage so they persist between sessions
 
-`work` button adds an extra category and disables all links with the `nsfw` attribute
+`work` button adds an extra category and disables links with the `nsfw` attribute
 
 ![screen](/netstart.png?raw=true "netstart")
 
