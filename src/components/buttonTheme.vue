@@ -130,4 +130,18 @@ function toggleTheme(index: number) {
   transform: translateY(-0.5rem);
 }
 
+
+@media screen and (max-width: 1024px) {
+  .themes {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1rem;
+    background-color: var(--color-background);
+    border-radius: 0.5rem;
+    width: 100vw;
+    padding: 1rem;
+    justify-content: space-around;
+  }
+}
 </style>

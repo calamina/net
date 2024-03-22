@@ -47,8 +47,18 @@ main {
 }
 
 @media screen and (max-width: 1024px) {
+  main {
+    padding: 1rem;
+    gap: 1rem;
+  }
   .links {
+    width: 100%;
+    height: 100%;
     flex-flow: column;
+    padding-bottom: 2rem;
+    margin: auto 0;
+    gap: 1rem;
+    justify-content: space-evenly;
   }
 }
 </style>

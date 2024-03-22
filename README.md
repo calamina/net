@@ -27,6 +27,7 @@ Simple startpage implementing DuckDuckGo bangs and a link list
 - [ ] Add git link & license & date in overlay
 
 # Backlog
+- [x] Make 100% mobile friendly
 - [x] DateTime (unused for now)
 - [x] Themes
 - [x] LocalStorage for states

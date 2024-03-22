@@ -35,6 +35,7 @@ function toggleList(search: any) {
   activeSearch.value = search
   const input = document.querySelector("input") as HTMLInputElement
   input.focus()
+  showList.value = false
 }
 </script>
 
@@ -125,7 +126,6 @@ form {
   width: 100%;
   .input {
     height: 100%;
-    width: 100%;
     width: 15rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
@@ -136,9 +136,9 @@ form {
     background-color: transparent;
     transition: width 0.3s;
 
-    &:focus {
-      width: 25rem;
-    }
+    // &:focus {
+    //   width: 25rem;
+    // }
   }
 }
 
@@ -175,5 +175,26 @@ form {
   opacity: 0;
   height: 0;
   margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    position: relative;
+    width: 100%;
+  }
+  .list {
+    position: absolute;
+    top: 3rem;
+    z-index: 200;
+    background-color: var(--color-background);
+    padding: 1rem 0;
+    height: 11.5rem;
+  }
+  form .input:focus {
+    width: 100%;
+  }
+  .list {
+    width: 100%;
+  }
 }
 </style>

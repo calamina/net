@@ -140,13 +140,27 @@ const work = useStorage('work-active', false)
     }
     .link-section__item {
       &:hover {
-        background-color: color-mix(in oklab, var(--color-section-#{$i}), black 8%);
+        background-color: color-mix(in srgb, var(--color-section-#{$i}), black 8%);
       }
       &--alt {
         background-color: var(--color-section-#{$i});
-        color: color-mix(in oklab, var(--color-section-#{$i}), black 32%);
+        color: color-mix(in srgb, var(--color-section-#{$i}), black 32%);
+        &:hover {
+          color: var(--color-text);
+        }
       }
     }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .link-section, .link-section__list {
+    width: 100%;
+  }
+  .link-section__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.25rem 1rem;
   }
 }
 </style>
