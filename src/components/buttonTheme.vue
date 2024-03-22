@@ -40,7 +40,7 @@ function toggleTheme(index: number) {
       theme
     </button>
     <div v-else class="themes">
-      <button :theme="theme" class="theme" v-for="(theme, index) in displayThemes" :key="index">
+      <button v-for="(theme, index) in displayThemes" :key="index" :theme="theme" class="theme" >
         <span @click="toggleTheme(index)" class="color color0"></span>
         <span @click="toggleTheme(index)" class="color color1"></span>
         <span @click="toggleTheme(index)" class="color color2"></span>
@@ -109,21 +109,12 @@ function toggleTheme(index: number) {
 .color0 {
   background-color: var(--color-background-clear);
 }
-.color1 {
-  background-color: var(--color-section-1);
+@for $i from 1 through 4 {
+  .color#{$i} {
+    background-color: var(--color-section-#{$i});
+  }
 }
 
-.color2 {
-  background-color: var(--color-section-2);
-}
-
-.color3 {
-  background-color: var(--color-section-3);
-}
-
-.color4 {
-  background-color: var(--color-section-4);
-}
 
 .fade-enter-active,
 .fade-leave-active {

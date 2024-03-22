@@ -3,7 +3,6 @@ import type Link from '@/models/link'
 import { useStorage } from '@vueuse/core'
 import { computed } from 'vue'
 
-
 const props = defineProps({
   title: String,
   color: String,
@@ -15,15 +14,11 @@ const props = defineProps({
 const filteredLinks = computed(
   () => props.links?.filter((link: Link) => !work.value ? link : !link.nsfw))
 
-const color = 'var(--color-section-' + props.index + ')'
-const colorAlt = 'var(--color-section-alt-' + props.index + ')'
-const colorAlt2 = 'var(--color-section-alt-sub-' + props.index + ')'
-
 const work = useStorage('work-active', false)
 </script>
 
 <template>
-  <div class="link-section" v-if="title === 'work' ? work : true">
+  <div class="link-section" :class="'section-' + index" v-if="title === 'work' ? work : true">
     <h2 class="link-section__title">
       <svg class="link-section__title__icon" v-html="icon" alt="icon"></svg>
       {{ title }}
@@ -53,7 +48,6 @@ const work = useStorage('work-active', false)
     align-items: center;
     font-size: 1rem;
     font-weight: 100;
-    background-color: v-bind(color);
     color: #242424;
     padding: 0.5rem 1rem;
     width: fit-content;
@@ -79,7 +73,6 @@ const work = useStorage('work-active', false)
 
     &::before {
       z-index: 50;
-      background-color: v-bind(color);
     }
 
     &::after {
@@ -97,7 +90,6 @@ const work = useStorage('work-active', false)
     height: 100%;
     gap: 0.25rem;
     justify-content: center;
-    background-color: v-bind(color);
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
@@ -124,16 +116,36 @@ const work = useStorage('work-active', false)
     color: #242424;
     transition: padding-left 0.2s;
     position: relative;
-
     &:hover {
       color: #242424;
-      background-color: v-bind(colorAlt);
       padding-left: 0.75rem;
     }
 
     &--alt {
-      color: v-bind(colorAlt2);
       width: fit-content;
+    }
+  }
+}
+
+@for $i from 0 through 4 {
+  .section-#{$i} {
+    .link-section__title {
+      background-color: var(--color-section-#{$i});
+      &::before {
+        background-color: var(--color-section-#{$i});
+      }
+    }
+    .link-section__list {
+      background-color: var(--color-section-#{$i});
+    }
+    .link-section__item {
+      &:hover {
+        background-color: color-mix(in oklab, var(--color-section-#{$i}), black 8%);
+      }
+      &--alt {
+        background-color: var(--color-section-#{$i});
+        color: color-mix(in oklab, var(--color-section-#{$i}), black 32%);
+      }
     }
   }
 }
