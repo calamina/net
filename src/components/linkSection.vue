@@ -72,11 +72,11 @@ const work = useStorage('work-active', false)
     }
 
     &::before {
-      z-index: 50;
+      z-index: 5;
     }
 
     &::after {
-      z-index: 100;
+      z-index: 10;
       border-bottom-left-radius: 0.5rem;
       background-color: var(--color-background);
     }

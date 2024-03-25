@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import type Search from '@/models/search'
 import searches from '@/data/searches.json'
+import { onClickOutside } from '@vueuse/core'
 import { ref, watch, type Ref } from 'vue'
 
 const activeSearch: Ref<Search> = ref({ name: 'g', url: 'https://www.google.com/search?hl=en&', query: 'q' })
 const input = ref('') 
 const showList = ref(false)
+const target = ref(null)
 
 watch(input, () => {
   setSearch()
@@ -37,6 +39,8 @@ function toggleList(search: any) {
   input.focus()
   showList.value = false
 }
+
+onClickOutside(target, event => showList.value = false)
 </script>
 
 <template>
@@ -56,7 +60,7 @@ function toggleList(search: any) {
       </button>
     </div>
     <Transition>
-      <div class="list" v-if="showList">
+      <div class="list" v-if="showList" ref="target">
         <button v-for="search in (searches as Search[])" :key="search.name" @click="toggleList(search)">
           {{search.name}}
         </button>

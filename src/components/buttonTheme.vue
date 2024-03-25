@@ -56,6 +56,7 @@ function toggleTheme(index: number) {
 
 .wrapper {
   position: fixed;
+  z-index: 50;
   bottom: 1rem;
   left: 1rem;
 }
@@ -132,16 +133,24 @@ function toggleTheme(index: number) {
 
 
 @media screen and (max-width: 1024px) {
+
+  .theme-button {
+    background-color: var(--color-background-clear);
+  }
   .themes {
     position: absolute;
-    left: 0;
+    left: -1rem;
     right: 0;
     bottom: -1rem;
-    background-color: var(--color-background);
-    border-radius: 0.5rem;
+    background-color: var(--color-background-clear);
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
     width: 100vw;
-    padding: 1rem;
-    justify-content: space-around;
+    padding: 1.5rem;
+  }
+  
+  .color0 {
+    background-color: var(--color-background);
   }
 }
 </style>
