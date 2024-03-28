@@ -83,7 +83,7 @@ function toggleTheme(index: number) {
   display: flex;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  gap: 0.75rem 1.25rem;
   padding: 0.25rem 0.25rem;
 }
 
@@ -103,7 +103,7 @@ function toggleTheme(index: number) {
   border-radius: 0.5rem;
 
   &+ .color {
-    margin-left: -0.25rem;
+    margin-left: -0.5rem;
   }
 }
 

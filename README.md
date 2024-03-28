@@ -23,10 +23,9 @@ Simple startpage implementing DuckDuckGo bangs and a link list
 - [ ] Clean and refactor css
 - [ ] Add localhost support
 - [ ] Keyboard navigation / shorcuts
-- [ ] Add info button & overlay
-- [ ] Add git link & license & date in overlay
 
 # Backlog
+- [x] Add git link & license & date in sidebar
 - [x] Make 100% mobile friendly
 - [x] DateTime (unused for now)
 - [x] Themes

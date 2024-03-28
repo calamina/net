@@ -49,7 +49,7 @@ const work = useStorage('work-active', false)
     font-size: 1rem;
     font-weight: 100;
     color: #242424;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.15rem;
     width: fit-content;
     gap: 0.5rem;
     border-top-left-radius: 0.5rem;

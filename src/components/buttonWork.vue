@@ -17,7 +17,7 @@ function toggleWork() {
 <style scoped lang="scss">
 
 .toggleWork {
-  position: fixed;
+  position: absolute;
   display: flex;
   align-items: center;
   bottom: 1rem;

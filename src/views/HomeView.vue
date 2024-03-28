@@ -1,10 +1,15 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import links from '@/data/links.json'
 import linkSection from '@/components/linkSection.vue'
 import searchBar from '@/components/searchBar.vue'
 import buttonWork from '@/components/buttonWork.vue'
 import buttonTheme from '@/components/buttonTheme.vue'
-import buttonTime from '@/components/buttonTime.vue'
+import buttonInfo from '@/components/buttonInfo.vue'
+import infoSection from '@/components/infoSection.vue'
+// import buttonTime from '@/components/buttonTime.vue'
+
+const showInfo = ref(false)
 </script>
 
 <template>
@@ -22,11 +27,16 @@ import buttonTime from '@/components/buttonTime.vue'
     </div>
     <buttonWork />
     <buttonTheme />
+    <buttonInfo @click="showInfo = !showInfo" />
   </main>
+  <Transition name="slide" mode="out-in">
+    <infoSection v-if="showInfo" />
+  </Transition>
 </template>
 
 <style scoped>
 main {
+  position: relative;
   min-height: 100vh;
   width: 100vw;
   padding: 2rem 0;
@@ -61,4 +71,14 @@ main {
     justify-content: space-evenly;
   }
 }
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: width 0.3s, padding 0.3s;
+}
+.slide-enter-from , .slide-leave-to {
+  width: 0;
+  padding: 1.25rem 0;
+}
+
 </style>
