@@ -12,7 +12,7 @@
 <style scoped lang="scss">
 
 button {
-  position: absolute;
+  position: fixed;
   display: flex;
   align-items: center;
   top: 1rem;
@@ -29,6 +29,17 @@ button {
   svg {
     width: 1rem;
     height: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  button {
+    top: unset;
+    bottom: 1rem;
+    right: 0rem;
+    left: 0rem;
+    margin: 0 auto;
+    z-index: 999;
   }
 }
 </style>

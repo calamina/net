@@ -32,6 +32,7 @@ const showInfo = ref(false)
   <Transition name="slide" mode="out-in">
     <infoSection v-if="showInfo" />
   </Transition>
+  <div class="phone-menu"></div>
 </template>
 
 <style scoped>
@@ -45,6 +46,19 @@ main {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+}
+
+.phone-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 4rem;
+  background-color: var(--color-background);
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  z-index: 100;
+  display: none;
 }
 
 .links {
@@ -65,7 +79,7 @@ main {
     width: 100%;
     height: 100%;
     flex-flow: column;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     margin: auto 0;
     gap: 1rem;
     justify-content: space-evenly;
@@ -81,4 +95,9 @@ main {
   padding: 1.25rem 0;
 }
 
+@media screen and (max-width: 1024px) {
+  .phone-menu {
+    display: block;
+  }
+}
 </style>

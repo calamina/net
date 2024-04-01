@@ -17,7 +17,7 @@ function toggleWork() {
 <style scoped lang="scss">
 
 .toggleWork {
-  position: absolute;
+  position: fixed;
   display: flex;
   align-items: center;
   bottom: 1rem;
@@ -30,6 +30,7 @@ function toggleWork() {
   color: var(--color-text);
   height: 2rem;
   background-color: transparent;
+  z-index: 300;
 
   svg {
     width: 1rem;

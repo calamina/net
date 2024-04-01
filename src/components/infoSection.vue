@@ -84,4 +84,18 @@ a {
   border-radius: 0.5rem;
   padding: 0.25rem 0.5rem;
 }
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    position: fixed;
+    overflow: hidden;
+    top: 1rem;
+    right: 1rem;
+    width: 100vw;
+    width: calc(100vw - 2rem);
+    height: calc(100vh - 5rem);
+    z-index: 900;
+    border-radius: 0.5rem;
+  }
+}
 </style>
