@@ -3,18 +3,23 @@
 
 <template>
   <div class="wrapper">
-    <div class="space">
+    <div>
       <h1>NetStart</h1>
-      <p>Simple startpage implementing DuckDuckGo bangs, themes, and a link list.</p>
-    </div>
-    <div class="space">
-      <h2>How to use</h2>
-      <p>Type <span class="code">!xx text</span> to search <span class="code">text</span> on <span class="code">xx</span>
-      </p>
-      <p>For example <span class="code">!yt funny cats</span> to find funny cat videos on youtube.</p>
-      <p>Or select the desired search engine in the list</p>
+      <p>Simple startpage implementing DuckDuckGo bangs, link lists and themes.</p>
     </div>
     <div>
+      <h2>Usage</h2>
+      <p>- Type <span class="code">!xx text</span> to search <span class="code">text</span> on <span class="code">xx</span>
+      </p>
+      <p>- For example <span class="code">!yt funny cats</span></p>
+      <p>- Or select a search engine in the list</p>
+      <p>- <span class="code">work</span> button disables nsfw links</p>
+    </div>
+    <div>
+      <h2>Customization</h2>
+      <p>- Edit links in <span class="code">links.json</span></p>
+      <p>- Edit searches in <span class="code">searches.json</span></p>
+      <p>- Edit themes in <span class="code">themes.css</span></p>
     </div>
     <div class="space">
       <div>
@@ -32,10 +37,10 @@
 <style scoped lang="scss">
 .wrapper {
   width: 35rem;
-  padding: 1.25rem;
+  padding: 1.25rem 1.5rem 1rem;
   z-index: 2000;
   height: 100vh;
-  background-color: var(--color-section-0);
+  background-color: var(--color-background-clear);
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -56,6 +61,7 @@ h2 {
   color: var(--color-section-2);
   margin: 0;
   padding: 0;
+  padding-bottom: 1rem;
 }
 
 a,
@@ -63,18 +69,18 @@ p {
   width: 25rem;
 }
 
-p {
-  line-height: 1.7;
+p, span {
+  line-height: 1.9;
+  color: var(--color-text);
 }
 
 a {
-  color: var(--color-text);
   color: var(--color-section-2);
 }
 
 .code {
-  background-color: var(--color-background);
   background-color: var(--color-section-1);
+  color: var(--color-section-4);
   border-radius: 0.5rem;
   padding: 0.25rem 0.5rem;
 }
