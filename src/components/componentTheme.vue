@@ -2,13 +2,14 @@
 import blockTheme from '@/components/blockTheme.vue'
 import buttonTheme from '@/components/buttonTheme.vue'
 import { useStateStore } from '@/store/state'
-import { onClickOutside } from '@vueuse/core'
+import { onClickOutside, useColorMode } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 
 const target = ref(null)
 const { theme } = storeToRefs(useStateStore());
 const { toggleTheme } = useStateStore();
+const colorMode = useColorMode({  emitAuto: true,  attribute: 'theme'})
 
 onClickOutside(target, event => toggleTheme(false))
 </script>
