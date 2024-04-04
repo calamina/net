@@ -2,10 +2,9 @@
 import links from '@/data/links.json'
 import searchBar from '@/components/searchBar.vue'
 import buttonWork from '@/components/buttonWork.vue'
-import componentTheme from '@/components/componentTheme.vue'
-import buttonInfo from '@/components/buttonInfo.vue'
+import componentTheme from '@/components/theme/componentTheme.vue'
+import componentInfo from '@/components/info/componentInfo.vue'
 import blockLink from '@/components/blockLink.vue'
-import blockInfo from '@/components/blockInfo.vue'
 </script>
 
 <template>
@@ -22,11 +21,8 @@ import blockInfo from '@/components/blockInfo.vue'
     </div>
     <buttonWork />
     <componentTheme />
-    <buttonInfo />
+    <componentInfo />
   </main>
-  <Transition name="slide">
-    <blockInfo/>
-  </Transition>
   <div class="phone-menu"></div>
 </template>
 

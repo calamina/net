@@ -20,6 +20,7 @@ Simple startpage implementing DuckDuckGo bangs and a link list
 - Edit themes in `themes.css`
 
 # TODO
+- [ ] split searchBar / searchList
 - [ ] Clean and refactor css
 - [ ] Add localhost support
 - [ ] Keyboard navigation / shorcuts

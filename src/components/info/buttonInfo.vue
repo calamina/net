@@ -16,11 +16,10 @@ const { info } = storeToRefs(useStateStore());
 <style scoped lang="scss">
 
 button {
-  position: absolute;
+  margin-top: 1rem;
+  margin-right: 1rem;
   display: flex;
   align-items: center;
-  top: 1rem;
-  right: 1rem;
   gap: 0.5rem;
   padding: 0.5rem;
   border: none;
@@ -28,7 +27,8 @@ button {
   cursor: pointer;
   color: var(--color-text);
   height: 2rem;
-  background-color: var(--color-background);
+  width: fit-content;
+  background-color: transparent;
 
   svg {
     width: 1rem;

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import blockTheme from '@/components/blockTheme.vue'
-import buttonTheme from '@/components/buttonTheme.vue'
+import blockTheme from '@/components/theme/blockTheme.vue'
+import buttonTheme from '@/components/theme/buttonTheme.vue'
 import { useStateStore } from '@/store/state'
 import { onClickOutside, useColorMode } from '@vueuse/core'
 import { storeToRefs } from 'pinia'

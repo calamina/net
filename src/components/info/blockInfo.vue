@@ -1,18 +1,11 @@
 <script setup lang="ts">
-import { useStateStore } from '@/store/state'
-import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
-// import { onClickOutside } from '@vueuse/core'
 
 const target = ref(null)
-const { info } = storeToRefs(useStateStore());
-// const { toggleInfo } = useStateStore();
-
-// onClickOutside(target, event => toggleInfo(false))
 </script>
 
 <template>
-<div v-if="info" class="wrapper" ref="target">
+<div class="container" ref="target">
   <div class="content">
     <div>
       <h1>NetStart</h1>
@@ -34,6 +27,7 @@ const { info } = storeToRefs(useStateStore());
     </div>
     <div class="space">
       <div>
+        <h2>Links</h2>
         <p>Information and source @</p>
         <a href="https://github.com/calamina/net">github.com/calamina/net</a>
       </div>
@@ -47,16 +41,16 @@ const { info } = storeToRefs(useStateStore());
 </template>
 
 <style scoped lang="scss">
-.wrapper {
-  z-index: 2000;
-  height: 100vh;
-  width: 35rem;
+.container {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
   background-color: var(--color-background);
-  padding: 1rem 1rem 1rem 0;
+  padding: 1rem;
 }
 .content {
   padding: 1.25rem 1.5rem 1rem;
-  height: 100%;
+  padding: 0.75rem 1rem;
   overflow: hidden;
   border-radius: 0.5rem;
   background-color: var(--color-background-clear);
@@ -64,7 +58,7 @@ const { info } = storeToRefs(useStateStore());
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .space {
@@ -80,7 +74,7 @@ h2 {
   color: var(--color-section-2);
   margin: 0;
   padding: 0;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 a,
@@ -89,7 +83,7 @@ p {
 }
 
 p, span {
-  line-height: 1.9;
+  line-height: 1.8;
   color: var(--color-text);
 }
 
@@ -101,18 +95,23 @@ a {
   background-color: var(--color-section-1);
   color: var(--color-section-4);
   border-radius: 0.5rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.15rem 0.25rem;
 }
 
 @media screen and (max-width: 1024px) {
-  .wrapper {
+  .container {
     position: fixed;
     top: 0;
     right: 0;
+    left: 0;
     width: 100vw;
     height: calc(100vh - 3rem);
     z-index: 900;
     padding: 1rem;
+  }
+
+  .content {
+    width: 100%;
   }
 }
 </style>

@@ -30,7 +30,6 @@ watchEffect(() => colorMode.value = state.value as BasicColorMode)
 
 <style scoped lang="scss">
 .themes {
-  display: flex;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.75rem 1.25rem;
@@ -38,7 +37,6 @@ watchEffect(() => colorMode.value = state.value as BasicColorMode)
   background-color: var(--color-background-clear);
   padding: 1.5rem;
   border-radius: 0.5rem;
-
 }
 
 .theme {
