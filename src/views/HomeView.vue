@@ -1,36 +1,31 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import links from '@/data/links.json'
-import linkSection from '@/components/linkSection.vue'
 import searchBar from '@/components/searchBar.vue'
 import buttonWork from '@/components/buttonWork.vue'
-import buttonTheme from '@/components/buttonTheme.vue'
+import componentTheme from '@/components/componentTheme.vue'
 import buttonInfo from '@/components/buttonInfo.vue'
-import infoSection from '@/components/infoSection.vue'
-// import buttonTime from '@/components/buttonTime.vue'
-
-const showInfo = ref(false)
+import blockLink from '@/components/blockLink.vue'
+import blockInfo from '@/components/blockInfo.vue'
 </script>
 
 <template>
   <main>
-    <!-- <buttonTime /> -->
     <searchBar />
     <div class="links">
-      <linkSection 
-        v-for="(section, index) in links" :key="index" 
-        :title="section.title"
-        :links="section.links" 
-        :icon="section.icon"
+      <blockLink 
+        v-for="(link, index) in links" :key="index" 
+        :title="link.title"
+        :links="link.links" 
+        :icon="link.icon"
         :index="index">
-      </linkSection>
+      </blockLink>
     </div>
     <buttonWork />
-    <buttonTheme />
-    <buttonInfo @click="showInfo = !showInfo" />
+    <componentTheme />
+    <buttonInfo />
   </main>
-  <Transition name="slide" mode="out-in">
-    <infoSection v-if="showInfo" />
+  <Transition name="slide">
+    <blockInfo/>
   </Transition>
   <div class="phone-menu"></div>
 </template>
@@ -70,6 +65,15 @@ main {
   position: relative;
 }
 
+.slide-enter-active, .slide-leave-active {
+  transition: width 0.3s, padding 0.3s, opacity 0.3s;
+}
+.slide-enter-from, .slide-leave-to {
+  width: 0;
+  opacity: 0;
+  padding: 1rem 0;
+}
+
 @media screen and (max-width: 1024px) {
   main {
     padding: 1rem;
@@ -79,23 +83,11 @@ main {
     width: 100%;
     height: 100%;
     flex-flow: column;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
     margin: auto 0;
     gap: 1rem;
     justify-content: space-evenly;
   }
-}
-
-.slide-enter-active,
-.slide-leave-active {
-  transition: width 0.3s, padding 0.3s;
-}
-.slide-enter-from , .slide-leave-to {
-  width: 0;
-  padding: 1.25rem 0;
-}
-
-@media screen and (max-width: 1024px) {
   .phone-menu {
     display: block;
   }

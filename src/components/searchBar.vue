@@ -179,22 +179,7 @@ form {
 }
 
 @media screen and (max-width: 1024px) {
-  .wrapper {
-    position: relative;
-    width: 100%;
-  }
-  .list {
-    position: absolute;
-    top: 3rem;
-    z-index: 200;
-    background-color: var(--color-background);
-    padding: 1rem 0;
-    height: 11.5rem;
-  }
-  form .input:focus {
-    width: 100%;
-  }
-  .list {
+  .wrapper, form .input:focus, .list {
     width: 100%;
   }
 }

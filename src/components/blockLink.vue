@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type Link from '@/models/link'
-import { useStorage } from '@vueuse/core'
+import { useStateStore } from '@/store/state'
+import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 
 const props = defineProps({
@@ -14,7 +15,7 @@ const props = defineProps({
 const filteredLinks = computed(
   () => props.links?.filter((link: Link) => !work.value ? link : !link.nsfw))
 
-const work = useStorage('work-active', false)
+const { work } = storeToRefs(useStateStore());
 </script>
 
 <template>
@@ -157,9 +158,8 @@ const work = useStorage('work-active', false)
   .link-section, .link-section__list {
     width: 100%;
   }
+
   .link-section__list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 0.25rem 1rem;
   }
 }

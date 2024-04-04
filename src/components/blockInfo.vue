@@ -1,8 +1,19 @@
 <script setup lang="ts">
+import { useStateStore } from '@/store/state'
+import { storeToRefs } from 'pinia'
+import { ref } from 'vue'
+// import { onClickOutside } from '@vueuse/core'
+
+const target = ref(null)
+const { info } = storeToRefs(useStateStore());
+// const { toggleInfo } = useStateStore();
+
+// onClickOutside(target, event => toggleInfo(false))
 </script>
 
 <template>
-  <div class="wrapper">
+<div v-if="info" class="wrapper" ref="target">
+  <div class="content">
     <div>
       <h1>NetStart</h1>
       <p>Simple startpage implementing DuckDuckGo bangs, link lists and themes.</p>
@@ -32,14 +43,22 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <style scoped lang="scss">
 .wrapper {
-  width: 35rem;
-  padding: 1.25rem 1.5rem 1rem;
   z-index: 2000;
   height: 100vh;
+  width: 35rem;
+  background-color: var(--color-background);
+  padding: 1rem 1rem 1rem 0;
+}
+.content {
+  padding: 1.25rem 1.5rem 1rem;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0.5rem;
   background-color: var(--color-background-clear);
   display: flex;
   flex-direction: column;
@@ -88,14 +107,12 @@ a {
 @media screen and (max-width: 1024px) {
   .wrapper {
     position: fixed;
-    overflow: hidden;
-    top: 1rem;
-    right: 1rem;
+    top: 0;
+    right: 0;
     width: 100vw;
-    width: calc(100vw - 2rem);
-    height: calc(100vh - 5rem);
+    height: calc(100vh - 3rem);
     z-index: 900;
-    border-radius: 0.5rem;
+    padding: 1rem;
   }
 }
 </style>
