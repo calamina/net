@@ -16,7 +16,7 @@ onClickOutside(target, event => toggleInfo(false))
 <template>
   <div class="wrapper" ref="target">
     <buttonInfo />
-    <Transition name="fade">
+    <Transition>
       <blockInfo v-if="info" />
     </Transition>
   </div>
@@ -32,14 +32,5 @@ onClickOutside(target, event => toggleInfo(false))
   flex-flow: column;
   align-items: end;
   gap: 0;
-}
-
-// TRANSITION
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.1s, transform 0.1s;
-}
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-  transform: translateY(0.5rem);
 }
 </style>

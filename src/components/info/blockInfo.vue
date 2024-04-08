@@ -1,43 +1,37 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const target = ref(null)
-</script>
-
 <template>
-<div class="container" ref="target">
-  <div class="content">
-    <div>
-      <h1>NetStart</h1>
-      <p>Simple startpage implementing DuckDuckGo bangs, link lists and themes.</p>
-    </div>
-    <div>
-      <h2>Usage</h2>
-      <p>- Type <span class="code">!xx text</span> to search <span class="code">text</span> on <span class="code">xx</span>
-      </p>
-      <p>- For example <span class="code">!yt funny cats</span></p>
-      <p>- Or select a search engine in the list</p>
-      <p>- <span class="code">work</span> button disables nsfw links</p>
-    </div>
-    <div>
-      <h2>Customization</h2>
-      <p>- Edit links in <span class="code">links.json</span></p>
-      <p>- Edit searches in <span class="code">searches.json</span></p>
-      <p>- Edit themes in <span class="code">themes.css</span></p>
-    </div>
-    <div class="space">
+  <div class="container">
+    <div class="content">
       <div>
-        <h2>Links</h2>
-        <p>Information and source @</p>
-        <a href="https://github.com/calamina/net">github.com/calamina/net</a>
+        <h1>NetStart</h1>
+        <p>Simple startpage implementing DuckDuckGo bangs, link lists and themes.</p>
       </div>
       <div>
-        <p>Made in 2024</p>
-        <span>by </span><a href="https://github.com/calamina">calamina</a>
+        <h2>Usage</h2>
+        <p>- Type <span class="code">!xx text</span> to search <span class="code">text</span> on <span class="code">xx</span>
+        </p>
+        <p>- For example <span class="code">!yt funny cats</span></p>
+        <p>- Or select a search engine in the list</p>
+        <p>- <span class="code">work</span> button disables nsfw links</p>
+      </div>
+      <div>
+        <h2>Customization</h2>
+        <p>- Edit links in <span class="code">links.json</span></p>
+        <p>- Edit searches in <span class="code">searches.json</span></p>
+        <p>- Edit themes in <span class="code">themes.css</span></p>
+      </div>
+      <div class="space">
+        <div>
+          <h2>More</h2>
+          <p>Information and source @</p>
+          <a href="https://github.com/calamina/net">github.com/calamina/net</a>
+        </div>
+        <div>
+          <p>Made in 2024</p>
+          <span>by </span><a href="https://github.com/calamina">calamina</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <style scoped lang="scss">
@@ -49,7 +43,6 @@ const target = ref(null)
   padding: 1rem;
 }
 .content {
-  padding: 1.25rem 1.5rem 1rem;
   padding: 0.75rem 1rem;
   overflow: hidden;
   border-radius: 0.5rem;
@@ -67,10 +60,15 @@ const target = ref(null)
   gap: 1.25rem;
 }
 
+.code {
+  background-color: var(--color-section-1);
+  color: var(--color-section-4);
+  border-radius: 0.5rem;
+  padding: 0.15rem 0.25rem;
+}
+
 h1,
 h2 {
-  font-size: 1rem;
-  font-weight: 200;
   color: var(--color-section-2);
   margin: 0;
   padding: 0;
@@ -80,25 +78,22 @@ h2 {
 a,
 p {
   width: 25rem;
-}
-
-p, span {
   line-height: 1.8;
-  color: var(--color-text);
 }
 
 a {
   color: var(--color-section-2);
 }
 
-.code {
-  background-color: var(--color-section-1);
-  color: var(--color-section-4);
-  border-radius: 0.5rem;
-  padding: 0.15rem 0.25rem;
+.v-enter-active, .v-leave-active {
+  transition: opacity 0.1s, transform 0.1s;
+}
+.v-enter-from, .v-leave-to {
+  opacity: 0;
+  transform: translateY(0.5rem);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1350px) {
   .container {
     position: fixed;
     top: 0;
@@ -106,10 +101,9 @@ a {
     left: 0;
     width: 100vw;
     height: calc(100vh - 3rem);
-    z-index: 900;
+    z-index: 200;
     padding: 1rem;
   }
-
   .content {
     width: 100%;
   }

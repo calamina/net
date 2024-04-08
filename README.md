@@ -20,12 +20,11 @@ Simple startpage implementing DuckDuckGo bangs and a link list
 - Edit themes in `themes.css`
 
 # TODO
-- [ ] split searchBar / searchList
-- [ ] Clean and refactor css
 - [ ] Add localhost support
 - [ ] Keyboard navigation / shorcuts
 
 # Backlog
+- [x] Clean and refactor css
 - [x] Add git link & license & date in sidebar
 - [x] Make 100% mobile friendly
 - [x] DateTime (unused for now)

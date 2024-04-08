@@ -21,19 +21,25 @@ watchEffect(() => colorMode.value = state.value as BasicColorMode)
 </script>
 
 <template>
-  <div class="themes">
-    <button v-for="(theme, index) in displayThemes" :key="index" :theme="theme" @click="go(index)" class="theme" >
-      <span v-for="i in 5" :key="i" class="color" :class="'color' + (i - 1)"></span>
-    </button>
+  <div class="container">
+    <div class="themes">
+      <button v-for="(theme, index) in displayThemes" :key="index" :theme="theme" @click="go(index)" class="theme" >
+        <span v-for="i in 5" :key="i" class="color" :class="'color' + (i - 1)"></span>
+      </button>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+.container {
+  background-color: var(--color-background);
+  padding: 1rem 0;
+}
+
 .themes {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.75rem 1.25rem;
-  padding: 0.25rem 0.25rem;
   background-color: var(--color-background-clear);
   padding: 1.5rem;
   border-radius: 0.5rem;
@@ -67,14 +73,22 @@ watchEffect(() => colorMode.value = state.value as BasicColorMode)
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .themes {
+.v-enter-active, .v-leave-active {
+  transition: opacity 0.1s, transform 0.1s;
+}
+.v-enter-from, .v-leave-to {
+  opacity: 0;
+  transform: translateY(0.5rem);
+}
+
+@media screen and (max-width: 1350px) {
+  .container {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 3rem;
+    bottom: 2rem;
     width: calc(100vw - 2rem);
-    z-index: 1000;
+    z-index: 200;
   }
 }
 </style>
