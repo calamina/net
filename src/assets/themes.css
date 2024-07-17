@@ -13,6 +13,7 @@
   --color-background: #242424; 
   --color-background-clear: #323232; 
   --color-text: #7e7985; 
+  --color-text-alt: #242424; 
   --color-section-0 : #ffcdb2;
   --color-section-1 : #ffb4a2;
   --color-section-2 : #e5989b;
@@ -35,6 +36,7 @@
   --color-background: hsl(160, 20%, 10%); 
   --color-background-clear: hsl(160, 20%, 15%); 
   --color-text : hsl(160, 20%, 40%);
+  --color-text-alt: #242424; 
   --color-section-0 : hsl(160, 20%, 95%);
   --color-section-1 : hsl(160, 20%, 80%);
   --color-section-2 : hsl(160, 20%, 65%);
@@ -57,6 +59,7 @@
   --color-background: hsl(20, 20%, 10%); 
   --color-background-clear: hsl(20, 20%, 15%); 
   --color-text : hsl(20, 20%, 40%);
+  --color-text-alt: #242424; 
   --color-section-0 : hsl(20, 20%, 95%);
   --color-section-1 : hsl(20, 20%, 80%);
   --color-section-2 : hsl(20, 20%, 65%);
@@ -79,6 +82,7 @@
   --color-background: hsl(250, 20%, 10%); 
   --color-background-clear: hsl(250, 20%, 16%); 
   --color-text : hsl(250, 20%, 45%);
+  --color-text-alt: #242424; 
   --color-section-0 : hsl(250, 20%, 95%);
   --color-section-1 : hsl(250, 20%, 80%);
   --color-section-2 : hsl(250, 20%, 65%);

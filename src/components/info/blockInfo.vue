@@ -44,7 +44,7 @@
 }
 .content {
   padding: 0.75rem 1rem;
-  overflow: hidden;
+  overflow: auto;
   border-radius: 0.5rem;
   background-color: var(--color-background-clear);
   display: flex;

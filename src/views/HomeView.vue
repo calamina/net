@@ -50,6 +50,7 @@ main {
   border-top-right-radius: 0.5rem;
   border-top-left-radius: 0.5rem;
   display: none;
+  z-index: 10;
 }
 
 .links {

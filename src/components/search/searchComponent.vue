@@ -17,7 +17,7 @@ function listSelected() {
   <div class="wrapper">
     <div class="search-bar">
       <div class="search">
-        <div class="button">
+        <div class="button bang">
           {{activeSearch.name}}
         </div>
         <searchInput v-model="activeSearch" />
@@ -83,6 +83,10 @@ function listSelected() {
     width: 1.2rem;
     height: 1.2rem;
   }
+}
+
+.bang {
+  color: var(--color-text)
 }
 
 @media screen and (max-width: 1350px) {

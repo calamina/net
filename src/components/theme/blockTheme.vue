@@ -90,5 +90,10 @@ watchEffect(() => colorMode.value = state.value as BasicColorMode)
     width: calc(100vw - 2rem);
     z-index: 200;
   }
+
+  .themes {
+    grid-template-columns: repeat(min, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(50px,1fr));
+  }
 }
 </style>

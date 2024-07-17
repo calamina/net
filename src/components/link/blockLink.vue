@@ -38,7 +38,7 @@ const props = defineProps({
     height: 2rem;
     color: white;
     text-decoration: none;
-    color: var(--color-text);
+    color: var(--color-text-alt, --color-text);
     transition: padding-left 0.2s;
     position: relative;
     &:hover {
@@ -52,7 +52,7 @@ const props = defineProps({
     color: v-bind("'color-mix(in srgb, var(--color-section-'+ index +'), black 32%)'");
 
     &:hover {
-      color: var(--color-text);
+      color: var(--color-text-alt, --color-text);
     }
   }
 </style>

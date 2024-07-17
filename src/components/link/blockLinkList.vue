@@ -49,6 +49,7 @@ h2 {
   border-top-right-radius: 0.5rem;
   position: relative;
   background-color: v-bind("'var(--color-section-'+ index +')'");
+  color: var(--color-text-alt, color-text);
 
   svg {
     width: 1rem;
@@ -66,12 +67,12 @@ h2 {
   }
 
   &::before {
-    z-index: 5;
+    z-index: 1;
     background-color: v-bind("'var(--color-section-'+ index +')'");
   }
 
   &::after {
-    z-index: 10;
+    z-index: 2;
     border-bottom-left-radius: 0.5rem;
     background-color: var(--color-background);
   }
