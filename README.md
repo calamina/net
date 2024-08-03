@@ -8,7 +8,20 @@ Simple startpage implementing DuckDuckGo bangs and a link list
 
 `work` button adds an extra category and disables links with the `nsfw` attribute
 
+`netstart`
 ![screen](/netstart.png?raw=true "netstart")
+
+`themes`
+![screen](/netstart-themes.png?raw=true "netstart themes")
+
+`bangs`
+![screen](/netstart-bangs.png?raw=true "netstart bangs")
+
+`work toggled`
+![screen](/netstart-work.png?raw=true "netstart work")
+
+`mobile`  
+![screen](/netstart-mobile.png?raw=true "netstart mobile")
 
 # Usage
 - The search list is available with the searchbar button
@@ -22,19 +35,3 @@ Simple startpage implementing DuckDuckGo bangs and a link list
 # TODO
 - [ ] Add localhost support
 - [ ] Keyboard navigation / shorcuts
-
-# Backlog
-- [x] Clean and refactor css
-- [x] Add git link & license & date in sidebar
-- [x] Make 100% mobile friendly
-- [x] DateTime (unused for now)
-- [x] Themes
-- [x] LocalStorage for states
-- [x] Search list + button
-- [x] Search urls
-- [x] Bangs
-- [x] Search
-- [x] Responsive (kindof)
-- [x] Models
-- [x] Data stored in json
-- [x] Link list
