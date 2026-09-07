@@ -24,13 +24,13 @@ watchEffect(() => colorMode.value = state.value as BasicColorMode)
   <div class="container">
     <div class="themes">
       <button v-for="(theme, index) in displayThemes" :key="index" :theme="theme" @click="go(index)" class="theme" >
-        <span v-for="i in 5" :key="i" class="color" :class="'color' + (i - 1)"></span>
+        <span v-for="i in 5" :key="i" class="color"></span>
       </button>
     </div>
   </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .container {
   background-color: var(--color-background);
   padding: 1rem 0;
@@ -67,11 +67,17 @@ watchEffect(() => colorMode.value = state.value as BasicColorMode)
 .color0 {
   background-color: var(--color-background);
 }
-@for $i from 1 through 4 {
+/* @for $i from 1 through 4 {
   .color#{$i} {
     background-color: var(--color-section-#{$i});
   }
-}
+} */
+
+.color:nth-child(1) { background-color: var(--color-background); }
+.color:nth-child(2) { background-color: var(--color-section-1); }
+.color:nth-child(3) { background-color: var(--color-section-2); }
+.color:nth-child(4) { background-color: var(--color-section-3); }
+.color:nth-child(5) { background-color: var(--color-section-4); }
 
 .v-enter-active, .v-leave-active {
   transition: opacity 0.1s, transform 0.1s;

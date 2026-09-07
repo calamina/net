@@ -38,7 +38,7 @@ function setSearch() {
   </form>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 form {
   height: 100%;
   width: 100%;

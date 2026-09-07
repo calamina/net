@@ -14,7 +14,7 @@ const { info } = storeToRefs(useStateStore());
   </button>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 button {
   margin-top: 1rem;
   margin-right: 1rem;

@@ -14,7 +14,7 @@ const { work } = storeToRefs(useStateStore());
   </button>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 
 button {
   position: absolute;

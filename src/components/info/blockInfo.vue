@@ -34,13 +34,15 @@
   </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .container {
   display: flex;
   height: fit-content;
   width: fit-content;
   background-color: var(--color-background);
   padding: 1rem;
+  overflow: scroll;
+  max-height: calc(100svh - 3rem);
 }
 .content {
   padding: 0.75rem 1rem;

@@ -10,7 +10,7 @@ const target = ref(null)
 const { info } = storeToRefs(useStateStore());
 const { toggleInfo } = useStateStore();
 
-onClickOutside(target, event => toggleInfo(false))
+onClickOutside(target, () => toggleInfo(false))
 </script>
 
 <template>
@@ -22,7 +22,7 @@ onClickOutside(target, event => toggleInfo(false))
   </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .wrapper {
   position: absolute;
   z-index: 900;

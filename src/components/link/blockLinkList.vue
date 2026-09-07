@@ -32,7 +32,7 @@ const { work } = storeToRefs(useStateStore());
   </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .linklist {
   display: flex;
   flex-direction: column;

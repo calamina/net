@@ -19,7 +19,7 @@ function toggleList(search: any) {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 div {
   width: 25rem;
   border-radius: 0.5rem;

@@ -23,7 +23,7 @@ onClickOutside(target, event => toggleTheme(false))
   </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .wrapper {
   position: fixed;
   z-index: 200;
